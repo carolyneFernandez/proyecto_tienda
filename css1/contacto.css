@@ -1,0 +1,28 @@
+img {
+  width: 100%;
+  height: 520px;
+
+}
+
+#general{
+  width: 100%;
+}
+#centro{
+  float: left;
+  width:54%;
+  height: 100%;
+margin: 1%;
+}
+p{
+  font-style: italic;
+  font-family: fantasy;
+}
+.uno{
+margin-bottom: 1px;
+  float: left;
+  width: 20%;
+  border:5px solid black;
+}
+body{
+  background-image: url("../imagenes/fondo.jpg")
+}

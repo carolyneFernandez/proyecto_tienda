@@ -1,0 +1,12 @@
+.tarjetas img{
+  width: 10%;
+  height:20%;
+}
+
+.tarjetas{
+  color:white;
+  background-color: #151515;
+  width: 50%;
+    height: 150px;
+float: left;
+}

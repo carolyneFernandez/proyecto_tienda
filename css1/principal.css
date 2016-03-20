@@ -1,0 +1,15 @@
+.contenedor_principal {
+  width: 80%;
+  margin-left: 10%;
+  margin-right:10%;
+  float:left;
+}
+.contenedor_principal .producto{
+	width:25%;
+	margin:10px;
+	display:block;
+  float: left;
+}
+.producto img{
+  width: 45%;
+}

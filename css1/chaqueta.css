@@ -1,0 +1,32 @@
+/*--div principal--*/
+.contenedor_principal{
+  margin-left: 2%;
+  margin-top: 5%;
+    margin-bottom: 5%;
+border: 1 solid black;
+  width: 28%;
+  height: 30%;
+  float: left;
+
+}
+
+
+/*-imagenes dentro del div-*/
+.contenedor_principal img{
+  border: 1px solid #585858;
+  height: 30%;
+  width: 30%;
+}
+body{
+  background-image: url("../imagenes/fondo.jpg")
+}
+
+button{
+  padding: 2%;
+  margin: 1%;
+}
+.cuerpo1{
+  border: 1 solid black;
+  width: 15%;
+
+}

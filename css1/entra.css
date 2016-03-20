@@ -1,0 +1,15 @@
+body{
+  background-image: url("../imagenes/fondo.jpg")
+}
+#formulario{
+  background-color:grey;
+
+  width: 40%;
+  height: 90%;
+  border-style: groove; border-width: 20px;
+
+  padding: 1%;
+}
+input{
+margin-top: 4%;
+}

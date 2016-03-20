@@ -1,0 +1,23 @@
+
+#talla{
+  margin-left: -510px;
+}
+#div2{
+  float: left;
+    width: 50%;
+      height: 100%;
+}
+#div1{
+  float: left;
+  width: 50%;
+  height:100%;
+}
+#div1 img{
+  width: 40%;
+  height: 95%;
+  margin-left: 20%;
+  border: 1px solid black;
+}
+#cuerpo{
+  margin-bottom: 6%;
+}
