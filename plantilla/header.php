@@ -1,5 +1,5 @@
 <header>
-     <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+     <nav class="navbar navbar-inverse navbar-static-top" role="navigation" id="cabeza">
     <!-- El logotipo y el icono que despliega el menú se agrupan
          para mostrarlos mejor en los dispositivos móviles -->
     <div class="navbar-header">
@@ -10,7 +10,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">MODA carolyne</a>
+      <a class="navbar-brand" href="#" >MODA carolyne</a>
     </div>
 
     <!-- Agrupar los enlaces de navegación, los formularios y cualquier

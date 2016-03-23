@@ -41,6 +41,7 @@ session_start();
            $_SESSION["nombre"] = $fila["Nombre"];
               $_SESSION["estilo"] = $fila["estilo"];
            $_SESSION["administrador"]=$fila["administrador"];
+           $_SESSION["codusuario"]=$fila["codusuario"];
 
 
             if($_SESSION["administrador"]==="0"){

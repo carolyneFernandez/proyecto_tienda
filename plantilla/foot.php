@@ -1,3 +1,4 @@
+
 <section class="footer">
 
       <div class="row">
@@ -16,9 +17,9 @@
           <div class="col-lg-3  col-md-3 col-sm-3">
             <div class="footer_dv">
                 <h4>SERVICIOS</h4>
-                <ul>
-                    <li><a href="tosiba-printer-support.php">Ropa de Mujer</a></li>
-                      <li><a href="panasonic-printer-support.php">Ropa de Hombre</a></li>
+                <ul id="listas">
+                    <li>Ropa de Mujer</li>
+                      <li>Ropa de Hombre</li>
 
 
 
@@ -28,9 +29,13 @@
           <div class="col-lg-3  col-md-3 col-sm-3">
             <div class="footer_dv">
                 <h4>Contactanos</h4>
-                <p>Calle Rafeael Beca Nº 15</p>
+                <ul id="listas">
+                    <li>Calle Rafeael Beca Nº 15</li>
+                      <li>LLAMANOS 684065028</li>
 
-          <p>LLAMANOS 684065028</p>
+
+
+                  </ul>
             </div>
           </div>
 
@@ -45,6 +50,7 @@
                 </div>
           </div>
 
-      </div>
+        </div>
+
 
 </section>

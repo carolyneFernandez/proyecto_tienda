@@ -1,7 +1,29 @@
 /*CSS DEL INDEX*/
 /*--HEADER*/
+#titulo{
+  color:black;
+  font-family: inherit;
+  font-weight: bold;
+}
 .navbar{
   margin-bottom: 0;
+}
+#cabeza{
+
+      background: #222222 none repeat scroll 0 0;
+      border-bottom: 4px solid red;
+      margin: 0;
+      padding: 1% 0;
+
+
+
+}
+#cabeza a{
+  color:red;
+  font-family: roboto;
+  font-weight: bold;
+
+  text-transform: uppercase;
 }
 .container{
   width: 100%;
@@ -29,9 +51,9 @@
 /*CSS DEL FOOTER*/
 .footer {
     background: #222222 none repeat scroll 0 0;
-    border-top: 4px solid #fcab0e;
+    border-top: 4px solid red;
     margin: 0;
-    padding: 20px 0;
+    padding: 1% 0;
 }
 .footer img{
   width: 15%;
@@ -39,9 +61,13 @@
 }
 .footer_dv {
     width: 100%;
+
+}
+#listas{
+  color:blue;
 }
 .footer_dv h4 {
-    color: #fcab0e;
+    color: red;
     font-family: roboto;
     font-weight: bold;
     margin-bottom: 30px;
@@ -91,9 +117,7 @@ border: 1 solid black;
   height: 30%;
   width: 30%;
 }
-body{
-  background-image: url("../imagenes/fondo.jpg")
-}
+
 
 button{
   padding: 2%;
@@ -109,4 +133,20 @@ button{
 /*--clienteproducto--*/
 #contenido{
 color:black;
+font-weight: bold;
+}
+/*--sobre nosotros--*/
+
+#sobre img{
+  margin: 5%;
+}
+/*--ubicacion--*/
+#ubicacion iframe{
+  border:3px solid red;
+  margin: 2%;
+}
+/*--PEDIDOS DEL USUARIO--*/
+table{
+  color:black;
+  margin:3%;
 }

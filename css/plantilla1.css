@@ -2,7 +2,7 @@
 /*--HEADER*/
 #titulo{
   color:black;
-   font-family:Courier New;
+  font-family: roboto;
   font-weight: bold;
 }
 .navbar{
@@ -11,15 +11,12 @@
 #cabeza{
 
       background: #222222 none repeat scroll 0 0;
-      border-bottom: 4px solid #fcab0e;
+      border-bottom: 4px solid blue;
       margin: 0;
       padding: 1% 0;
-
-
-
 }
 #cabeza a{
-  color:#fcab0e;
+  color:blue;
   font-family: roboto;
   font-weight: bold;
 
@@ -27,7 +24,7 @@
 }
 .container{
   width: 100%;
-  height: 78%;
+  height: 15%;
   background-color: gray;
   color:white;
 
@@ -51,27 +48,19 @@
 /*CSS DEL FOOTER*/
 .footer {
     background: #222222 none repeat scroll 0 0;
-    border-top: 4px solid #fcab0e;
-    margin:0%;
+    border-top: 4px solid blue;
+    margin: 0;
     padding: 1% 0;
 }
-
 .footer img{
-  width: 10%;
-  height: 10%;
-  margin: 1%;
+  width: 15%;
+  height: 15%;
 }
 .footer_dv {
     width: 100%;
-
-}
-#listas li{
-  color:blue;
 }
 .footer_dv h4 {
-
-  
-    color: #fcab0e;
+    color: blue;
     font-family: roboto;
     font-weight: bold;
     margin-bottom: 30px;
@@ -146,24 +135,11 @@ font-weight: bold;
 }
 /*--ubicacion--*/
 #ubicacion iframe{
-  border:3px solid yellow;
+  border:3px solid blue;
   margin: 2%;
 }
 /*--PEDIDOS DEL USUARIO--*/
 table{
   color:black;
   margin:3%;
-}
-
-/*--REGISTRO--*/
-
-.colorgraph {
-  height: 5px;
-  border-top: 0;
-  background: #c4e17f;
-  border-radius: 5px;
-  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
 }

@@ -1,2 +1,3 @@
-
-<div class="alert alert-danger"><strong>Error!</strong>|usuario o contraseña no corecto.</div>
+<div class="alert alert-danger">
+  <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+</div>

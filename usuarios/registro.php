@@ -7,44 +7,87 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/entra.css">
+    <?php
+    include "../plantilla/temas.php"
+    ?>
 </head>
 <body>
   <header>
-     <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-    <!-- El logotipo y el icono que despliega el menú se agrupan
-         para mostrarlos mejor en los dispositivos móviles -->
-    <div class="navbar-header">
-          <a class="navbar-brand" href="#">MODA carolyne</a>
-    </div>
+    <?php
+    include "../plantilla/header.php"
+    ?>
   </header>
     <?php if(!isset($_POST["envia"])) : ?>
-<center>
 
-      <div id="formulario">
+  <div class="container">
+
+  <div class="row">
+      <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+  		<form action="registro.php" method="post">
+  			<h2>REGISTRATE <small>Registro gratis y rapido.</small></h2>
+  			<hr class="colorgraph">
+  			<div class="row">
+  				<div class="col-xs-12 col-sm-6 col-md-6">
+  					<div class="form-group">
+                <input type="text" name="nombre"  class="form-control input-lg" placeholder="Nombre" tabindex="2">
+		</div>
+  				</div>
+  				<div class="col-xs-12 col-sm-6 col-md-6">
+  					<div class="form-group">
+  						<input type="password" name="passwd" class="form-control input-lg" placeholder="Contraseña" tabindex="2">
+  					</div>
+  				</div>
+  			</div>
+        <div class="row">
+  				<div class="col-xs-12 col-sm-6 col-md-6">
+  					<div class="form-group">
+                <input type="text" name="apellido"  class="form-control input-lg" placeholder="Apellido" tabindex="2">
+		</div>
+  				</div>
+  				<div class="col-xs-12 col-sm-6 col-md-6">
+  					<div class="form-group">
+  						<input type="text" name="dni" class="form-control input-lg" placeholder="DNI" tabindex="2">
+  					</div>
+  				</div>
+  			</div>
+        <div class="row">
+  				<div class="col-xs-12 col-sm-6 col-md-6">
+  					<div class="form-group">
+                <input type="text" name="localidad"  class="form-control input-lg" placeholder="Localidad" tabindex="2">
+		</div>
+  				</div>
+  				<div class="col-xs-12 col-sm-6 col-md-6">
+  					<div class="form-group">
+  						<input type="text" name="provincia" class="form-control input-lg" placeholder="Provincia" tabindex="2">
+  					</div>
+  				</div>
+  			</div>
+        <div class="row">
+  				<div class="col-xs-12 col-sm-6 col-md-6">
+  					<div class="form-group">
+                <input type="text" name="pais"  class="form-control input-lg" placeholder="Pais" tabindex="2">
+		</div>
+  				</div>
+          <div class="form-group">
+				<input type="text" name="direccion"  class="form-control input-lg" placeholder="Direccion" tabindex="4">
+			</div>
+  			</div>
+
+  			<hr class="colorgraph">
+  			<div class="row">
+  				<div class="col-xs-12 col-md-6"><input type="submit"  name="envia" value="Enviar" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+
+  			</div>
+  		</form>
+  	</div>
+  </div>
+
+  </div>
 
 
-  <form action="registro.php" method="post">
-<label>Registrate gratis y rapido</label>
-    <input type="text" name="nombre"  class="form-control" required placeholder="Nombre" style=width: 15%; >
-
-    <input type="password" name="passwd" class="form-control" required placeholder="Contraseña" >
-
-    <input type="text" name="apellido"  class="form-control" required placeholder="Apellidos" >
-
-    <input type="text" name="dni"  class="form-control" required placeholder="DNI" >
-
-    <input type="text" name="localidad" class="form-control" required placeholder="Localida" >
-
-    <input type="text" name="provincia"  class="form-control" required placeholder="Provincia" >
-
-    <input type="text" name="pais"  class="form-control" required placeholder="Pais" >
-
-    <input type="text" name="direccion"  class="form-control" required placeholder="Direccion" ><br>
-    <input type="submit" name="envia" class="btn btn-success"value="Enviar">
-  </form>
-    </div>
-  </center>
+  <?php
+  include "../plantilla/foot.php"
+  ?>
 <?php else: ?>
 
 

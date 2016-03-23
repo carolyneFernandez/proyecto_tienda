@@ -25,8 +25,8 @@ session_start();
       //include "../plantilla/logeado.php"
       ?>
 <seccion class="jumbotron">
-  <div class="container">
-  <center><h1 class="titulo-blog">MODA CAROLYNE</h1>
+  <div class="container" id="titulo">
+  <center><h1 class="titulo-blog" >MODA CAROLYNE</h1>
     <p>
       Toda la ropa de Temporada y de la mejor calidad
     </p>
