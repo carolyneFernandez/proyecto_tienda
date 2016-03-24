@@ -91,7 +91,19 @@ $obj = $result->fetch_object();
           <div class="form-group">
             <label class="col-sm-2 control-label" for="formGroup">Apellidos</label>
             <div class="col-sm-4">
-              <input class="form-control" type="text"  name="apellido" value=<?php echo $obj->apellido;?>>
+              <input class="form-control" type="text"  name="apellido" value="<?php echo $obj->apellido?>">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="formGroup">DNI</label>
+            <div class="col-sm-4">
+              <input class="form-control" type="text"  name="dni" value="<?php echo $obj->dni?>">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="formGroup">Provincia</label>
+            <div class="col-sm-4">
+              <input class="form-control" type="text"  name="provincia" value="<?php echo $obj->provincia?>">
             </div>
           </div>
 
@@ -216,8 +228,50 @@ where u.Nombre='".$_SESSION['nombre']."'")){
 </div>
 </div>
   <div id="menu2" class="tab-pane fade">
-    <h3>Menu 2</h3>
-    <p>Some content in menu 2.</p>
+    <div class="container well " >
+
+      <div class="row">
+          <div><h2>ELIGE EL TEMA</h2></div>
+        </div>
+        <?php
+        //CREATING THE CONNECTION
+       $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
+
+        //TESTING IF THE CONNECTION WAS RIGHT
+        if ($connection->connect_errno) {
+            printf("Connection failed: %s\n", $connection->connect_error);
+            exit();
+        }
+
+        //MAKING A SELECT QUERY
+        /* Consultas de selección que devuelven un conjunto de resultados */
+        $connection->set_charset("utf8");
+
+      $consulta=("SELECT * FROM usuarios where Nombre='".$_SESSION['nombre']."' ");
+
+      if ($result = $connection->query($consulta)) {
+
+
+      $obj = $result->fetch_object();
+
+      ?>
+          <form  action="modificatemas.php" class="form-horizontal " method="POST">
+            <form>
+              <input class="form-control" name="id" type="hidden"  value=<?php echo $obj->codusuario;?> >
+      <input type="radio" name="procesar" value="0" > <img src="../imagenes/plantillas/default.png" height="142" width="142">
+      <input type="radio" name="procesar" value="1"><img src="../imagenes/plantillas/plantilla1.png" height="142" width="142">
+      <input type="radio" name="procesar" value="2"><img src="../imagenes/plantillas/plantilla2.png" height="142" width="142">
+
+      <button type="submit" class="btn btn-primary">MODIFICA</button>
+
+    </form>
+    </form>
+    <?php
+}else{
+
+}?>
+  </div>
+</div>
   </div>
 </div>
 <?php
