@@ -12,7 +12,7 @@
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="../css/administrador.css">
+      <link rel="stylesheet" href="../css/default.css">
 
     <title></title>
 </head>
@@ -44,6 +44,16 @@
           <!-- Pintar la cabecera de la tabla -->
           <table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed">
           <thead>
+            <tr class="info" >
+              <th colspan="5">
+                <CENTER>
+                  TABLA DE DISTRIDORES
+                </CENTER>
+              </th>
+              <th colspan="2">
+              DESCARGAS<a href="../pdf/distribuidor.php" ><span class="glyphicon glyphicon-download-alt"></span></a>
+              </th>
+            </tr>
             <tr class="info" >
               <th>Codigo de distribuidor</th>
               <th>Nombre</th>
@@ -81,7 +91,12 @@
       } //END OF THE IF CHECKING IF THE QUERY WAS RIGHT
 
     ?>
+  </table>
+  <a href="agregadistribuidor.php"><button type='button' class='btn btn-success'>Añadir distribuidor</button></a>
+
     </div>
-    <a href="agregadistribuidor.php"><button type='button' class='btn btn-success'>Añadir distribuidor</button></a>
+    <?php
+        include "../plantilla/foot.php"
+    ?>
     </body>
     </html>

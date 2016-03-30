@@ -13,19 +13,19 @@
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="../css/administrador.css">
+      <link rel="stylesheet" href="../css/default.css">
 
     <title>Añadir Distribuidor</title>
 </head>
     <body>
       <?php
         include_once("../plantilla/cabeceradmin.php");
-      ?>
+      ?> <div id="center" class="container">
         <center>
           <b><h3>Añadir Distribuidor</h3></b>
 
         </center>
-     <div id="center" class="container">
+
 
        <?php
         //creamos la coneccion a la base de datos
@@ -83,5 +83,8 @@
     ?>
 
     </div>
+    <?php
+      include_once("../plantilla/foot.php");
+    ?>
     </body>
     </html>

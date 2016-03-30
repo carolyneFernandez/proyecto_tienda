@@ -12,6 +12,7 @@
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="../css/default.css">
 
 <style>
 .color{
@@ -47,8 +48,18 @@ $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
 
   <a href="añadirproducto.php"><button type='button' class='btn btn-info'>Añadir Producto</button></a>
           <!-- PRINT THE TABLE AND THE HEADER -->
-          <table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed">
+          <table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed" id="productos">
           <thead>
+            <tr class="info" >
+              <th colspan="9">
+                <CENTER>
+                  TABLA DE PRODUCTOS
+                </CENTER>
+              </th colspan="2">
+              <th>
+              DESCARGAS<a href="../pdf/producto.php" ><span class="glyphicon glyphicon-download-alt"></span></a>
+              </th>
+            </tr>
             <tr>
               <th colspan="11"  class=' btn-info'>
              <center><b>CHAQUETA DE MUJER </b>
@@ -129,7 +140,7 @@ $consulta="SELECT p.*,d.nombre nombred FROM
 $result = $connection->query($consulta)?>
 <!-- otra tabla -->
 <!-- PRINT THE TABLE AND THE HEADER -->
-<table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed">
+<table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed" id="productos">
 <thead>
   <tr>
     <th colspan="11"  class=' btn-info'>
@@ -211,7 +222,7 @@ $consulta="SELECT p.*,d.nombre nombred FROM
 $result = $connection->query($consulta)?>
 <!-- otra tabla -->
 <!-- PRINT THE TABLE AND THE HEADER -->
-<table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed">
+<table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed" id="productos">
 <thead>
   <tr>
     <th colspan="11"  class=' btn-info'>
@@ -292,7 +303,7 @@ $consulta="SELECT p.*,d.nombre nombred FROM
 $result = $connection->query($consulta)?>
 <!-- otra tabla -->
 <!-- PRINT THE TABLE AND THE HEADER -->
-<table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed">
+<table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed" id="productos">
 <thead>
   <tr>
     <th colspan="11"  class=' btn-info'>
@@ -373,7 +384,7 @@ $consulta="SELECT p.*,d.nombre nombred FROM
 $result = $connection->query($consulta)?>
 <!-- otra tabla -->
 <!-- PRINT THE TABLE AND THE HEADER -->
-<table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed">
+<table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed" id="productos">
 <thead>
   <tr>
   <th colspan="11"  class=' btn-info'>
@@ -454,7 +465,7 @@ $consulta="SELECT p.*,d.nombre nombred FROM
 $result = $connection->query($consulta)?>
 <!-- otra tabla -->
 <!-- PRINT THE TABLE AND THE HEADER -->
-<table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed">
+<table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed" id="productos">
 <thead>
   <tr>
   <th colspan="11"  class=' btn-info'>
@@ -536,6 +547,9 @@ echo "</table>";
           unset($connection);
 
     ?></div>
+    <?php
+        include "../plantilla/foot.php"
+    ?>
 
 
   </body>

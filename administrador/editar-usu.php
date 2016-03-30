@@ -9,25 +9,22 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-    <meta charset="utf-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Usuario</title>
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/administrador.css">
-      <link rel="stylesheet" href="../css/foot.css">
-        <link rel="stylesheet" href="../css/editar.css">
+    <link rel="stylesheet" href="../css/default.css">
+
 </head>
 
 <body>
   <?php
       include "../plantilla/cabeceradmin.php"
   ?>
-      <center>
-         <h3><b>EDITA LOS DATOS DEL USUARIO</b></h3>
-      </center>
+
  <div id="center" class="container">
 
    <?php
@@ -44,10 +41,14 @@
 
 
    $id=$_GET['id'];
+   $connection->set_charset("utf8");
    $consulta=("SELECT * FROM usuarios where codusuario=$id");
 
     $result=$connection->query($consulta);
     $obj = $result->fetch_object();
+    echo " <center>
+        <h3><b>Edita los datos de $obj->Nombre</b></h3>
+     </center>";
     echo "<form method='post' action='#'>";
     echo " <label>Nombre :</label>";
     echo  "<input type='text' name='nombre'  value='$obj->Nombre' class='form-control' >";

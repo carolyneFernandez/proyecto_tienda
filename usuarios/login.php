@@ -17,47 +17,37 @@ session_start();
     </head>
     <body>
       <?PHP
-
        //DECLARAMOS LAS VARIABLES QUE VAMOS A UTILIZAR EN LA CONSULTA Y LES ASIGNAMOS EL VALOR DEL FORMULARIO
        $usuario = $_POST['usuario'];
        $password = $_POST['pass'];
-
        //CREAMOS LA VARIABLE CON LA CADENA DE LA CONSULTA
        $consulta = "SELECT * FROM usuarios WHERE nombre = '".$usuario."' AND passwd = '".md5($password)."'";
-
-
        //AHORA DEBEMOS REALIZAR UNA CONEXIÓN A LA BASE DE DATOS
         $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
+        if ($connection->connect_errno) {
+             header("Location: ../instalacion.php");
+            exit();
+        }
        $resultado = $connection->query($consulta);
-
-
        if($resultado->num_rows > 0){
            session_start();
             //Coge los datos devueltos por la consulta.
         while ($fila = $resultado->fetch_assoc()){
-
-
          //creamos las session
            $_SESSION["nombre"] = $fila["Nombre"];
               $_SESSION["estilo"] = $fila["estilo"];
            $_SESSION["administrador"]=$fila["administrador"];
            $_SESSION["codusuario"]=$fila["codusuario"];
-
-
             if($_SESSION["administrador"]==="0"){
               header("Location: ../administrador/administrador.php");
-
             }else{
              header("Location: index.php");
             }
-
         }
-      }
-
+      }else{
 include("../plantilla/alert.php");
+}
        unset($connection);
-
-
       ?>
 
     </body>

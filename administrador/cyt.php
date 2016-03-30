@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COLORES Y TALLAS</title>
-      <link rel="stylesheet" href="../css/administrador.css">
+      <link rel="stylesheet" href="../css/default.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -39,10 +39,10 @@
 
           ?>
 
-    <div class="container">
+    <div class="container" id="divcolores">
 
               <!-- pintamos la cabecera de la tabla -->
-              <table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed">
+              <table style="border:1px solid black" class="table table-bordered table-hover table-condensed">
               <thead>
                 <tr >
                   <th class="info"  colspan="2">
@@ -73,7 +73,7 @@
 
 
 
-
+ echo "</table>";
           }
 
 
@@ -85,10 +85,10 @@ if ($result = $connection->query("SELECT * FROM producto where categoria='blusas
 
   ?>
 
-<div class="container">
+
 
       <!-- PRINT THE TABLE AND THE HEADER -->
-      <table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed">
+      <table style="border:1px solid black" class="table  table-bordered table-hover table-condensed">
       <thead>
         <tr >
           <th class="info"  colspan="2">
@@ -116,6 +116,7 @@ if ($result = $connection->query("SELECT * FROM producto where categoria='blusas
 
           echo "</tr>";
       }
+      echo "</table>";
     }
 
 
@@ -126,10 +127,10 @@ if ($result = $connection->query("SELECT * FROM producto where categoria='pantal
 
   ?>
 
-<div class="container">
+
 
       <!-- PRINT THE TABLE AND THE HEADER -->
-      <table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed">
+      <table style="border:1px solid black" class="table table-bordered table-hover table-condensed">
       <thead>
         <tr >
           <th class="info"  colspan="2">
@@ -157,7 +158,7 @@ if ($result = $connection->query("SELECT * FROM producto where categoria='pantal
 
           echo "</tr>";
       }
-
+  echo "</table>";
 
   }
   ////////otra consulta PARA  sudaderas///////
@@ -166,10 +167,10 @@ if ($result = $connection->query("SELECT * FROM producto where categoria='pantal
 
     ?>
 
-  <div class="container">
+
 
         <!-- PRINT THE TABLE AND THE HEADER -->
-        <table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed">
+        <table style="border:1px solid black" class="table  table-bordered table-hover table-condensed">
         <thead>
           <tr >
             <th class="info"  colspan="2">
@@ -198,18 +199,19 @@ if ($result = $connection->query("SELECT * FROM producto where categoria='pantal
             echo "</tr>";
         }
 
-
+  echo "</table>";
     }
+
     ////////otra consulta PARA pantalones///////
 
     if ($result = $connection->query("SELECT * FROM producto where categoria='pantalones' and sexo ='hombre' ")) {
 
       ?>
 
-    <div class="container">
+
 
           <!-- PRINT THE TABLE AND THE HEADER -->
-          <table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed">
+          <table style="border:1px solid black" class="table  table-bordered table-hover table-condensed">
           <thead>
             <tr >
               <th class="info"  colspan="2">
@@ -237,7 +239,7 @@ if ($result = $connection->query("SELECT * FROM producto where categoria='pantal
 
               echo "</tr>";
           }
-
+echo "</table>";
 
       }
       ////////otra consulta PARA chaquetas///////
@@ -246,10 +248,10 @@ if ($result = $connection->query("SELECT * FROM producto where categoria='pantal
 
         ?>
 
-      <div class="container">
+
 
             <!-- PRINT THE TABLE AND THE HEADER -->
-            <table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed">
+            <table style="border:1px solid black" class="table table-bordered table-hover table-condensed">
             <thead>
               <tr >
                 <th class="info"  colspan="2">
@@ -281,10 +283,14 @@ if ($result = $connection->query("SELECT * FROM producto where categoria='pantal
             $result->close();
             unset($obj);
             unset($connection);
-
+echo "</table>";
         }
 
         ?>
-        </div>
+
+    </div>
+        <?php
+          include_once("../plantilla/foot.php");
+        ?>
       </body>
       </html>

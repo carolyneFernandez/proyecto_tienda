@@ -12,9 +12,8 @@
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="">
-
-    <title></title>
+      <link rel="stylesheet" href="../css/default.css">
+    <title>PEDIDOS DEL CLIENTE</title>
 </head>
   <body>
     <?php
@@ -45,7 +44,7 @@ u.codusuario=p.codusuario join incluyen i on p.codpedido=i.codpedido join produc
 
 
           <!-- PRINT THE TABLE AND THE HEADER -->
-          <table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed">
+          <table style="border:1px solid black" class="table  table-bordered table-hover table-condensed">
           <thead>
             <tr class="info" >
               <th>Nombre del Cliente</th>
@@ -88,6 +87,8 @@ u.codusuario=p.codusuario join incluyen i on p.codpedido=i.codpedido join produc
     ?>
   </table>
     </div>
-
+    <?php
+        include "../plantilla/foot.php"
+    ?>
   </body>
   </html>

@@ -1,4 +1,7 @@
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+<header>
+
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation"  id="cabeza">
   <a href="#" class="navbar-brand" >MODA CAROLYNE</a>
 <div class="collapse navbar-collapse" id="navegacion">
 <ul class="nav navbar-nav">
@@ -7,6 +10,7 @@
   <li><a href="pedidos.php">PEDIDOS</a></li>
   <li><a href="distribuidor.php">DISTRIBUIDOR</a></li>
   <li><a href="cyt.php">COLORES Y TALLAS</a></li>
+  
     <li><a href="../usuarios/index.php">PAGINA PRINCIPAL</a></li>
 </ul>
 <?PHP
@@ -29,7 +33,7 @@ if(isset($_SESSION['nombre']) && $_SESSION['nombre'] != ''){
                       Ver perfil
                     </a>
                     </li>
-                  
+
                     <li><a href='../plantilla/cerrar.php'>
                     <span class='glyphicon glyphicon-log-in'></span>Cerrar sesion
                     </a>

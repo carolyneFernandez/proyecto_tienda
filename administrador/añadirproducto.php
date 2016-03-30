@@ -15,21 +15,16 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/administrador.css">
+    <link rel="stylesheet" href="../css/default.css">
 </head>
 
 <body>
   <?php
       include "../plantilla/cabeceradmin.php"
   ?>
-      <div id="cuerpo">
-
-
-      <b><h3>AÑADE UN PRODUCTO</h3></b>
-
 
  <div id="center" class="container">
-
+  <b><h3>AÑADE UN PRODUCTO</h3></b>
    <?php
    //creamos la coneccion
        $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
@@ -126,7 +121,9 @@ VALUES  ( NULL,'$coddistribuidor','$nombre','$descripcion','$stock','$imagen','$
         unset($connection);
 ?>
 
-</div>
   </div>
+  <?php
+      include "../plantilla/foot.php"
+  ?>
 </body>
 </html>
