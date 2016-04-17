@@ -35,7 +35,7 @@
       /* Consultas de selección que devuelven un conjunto de resultados */
       $connection->set_charset("utf8");
       if ($result = $connection->query("SELECT * from usuarios u join  pedidos p  on
-u.codusuario=p.codusuario join incluyen i on p.codpedido=i.codpedido join producto pro on i.codproducto=pro.codproducto;")) {
+u.codusuario=p.codusuario join incluyen i on p.codpedido=i.codpedido join producto pro on i.codproducto=pro.codproducto ;")) {
 
 
 

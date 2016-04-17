@@ -49,8 +49,15 @@ session_start();
 
       <ul class="nav nav-tabs">
   <li class="active"><a data-toggle="tab" href="#home">DATOS PERSONALES</a></li>
+  <?php
+  if($_SESSION["administrador"]!="0"){?>
   <li><a data-toggle="tab" href="#menu1">PEDIDOS</a></li>
+
+<?php  }?>
+<?php
+if($_SESSION["administrador"]!="0"){?>
   <li><a data-toggle="tab" href="#menu2">TEMAS</a></li>
+  <?php  }?>
 </ul>
 
 <div class="tab-content">

@@ -10,7 +10,27 @@
   <li><a href="pedidos.php">PEDIDOS</a></li>
   <li><a href="distribuidor.php">DISTRIBUIDOR</a></li>
   <li><a href="cyt.php">COLORES Y TALLAS</a></li>
-  
+    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">ESTADISTICAS</a>
+    <ul class="dropdown-menu">
+        <li>
+          <a href="../dasboard/general.php">Datos Generales</a>
+        </li>
+        <li>
+          <a href="../dasboard/evousuarios.php">Datos de Usuarios</a>
+        </li>
+        <li>
+          <a href="../dasboard/pedidomascomprado.php">Producto mas comprado</a>
+        </li>
+        <li>
+          <a href="../dasboard/pedidos.php">Pedidos</a>
+        </li>
+        <li>
+          <a href="../dasboard/productos.php">Producto</a>
+        </li>
+      </ul>
+
+
+    </li>
     <li><a href="../usuarios/index.php">PAGINA PRINCIPAL</a></li>
 </ul>
 <?PHP

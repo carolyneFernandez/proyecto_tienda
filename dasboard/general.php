@@ -20,10 +20,12 @@
       <?php
           include "../plantilla/cabeceradmin.php"
       ?>
-<center>
-  <h1>CANTIDAD DE ROPA POR CATEGORIA</h1>
-      <img src="./php/productos.php" />
-</center>
+      <center>
+        <h1>CANTIDAD DE ROPA POR CATEGORIA</h1>
+          <img src="./php/general.php" />
+      </center>
+
+
     <?php
 
         include "../plantilla/foot.php"
