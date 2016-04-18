@@ -1,5 +1,6 @@
 /*CSS DEL INDEX*/
 /*--HEADER*/
+
 #titulo{
   color:black;
    font-family:Courier New;
@@ -25,6 +26,7 @@
 
   text-transform: uppercase;
 }
+
 
 .container{
   width: 100%;
@@ -101,8 +103,18 @@
     margin: 0 0 15px;
     text-align: justify;
 }
-
-
+/*producto*/
+.nombres{
+  color:#5E610B;
+}
+/*index*/
+.imageni{
+  width:100%;
+}
+#div{
+  margin-top:5%;
+  margin-left:8%;
+}
 /*productos*/
 /*--div principal--*/
 .contenedor_principal{

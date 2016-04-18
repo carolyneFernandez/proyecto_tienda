@@ -1,5 +1,13 @@
 /*CSS DEL INDEX*/
 /*--HEADER*/
+/*index*/
+#div{
+  margin-top:5%;
+  margin-left:8%;
+}
+.imageni{
+  width:100%;
+}
 #titulo{
   color:black;
   font-family: inherit;
@@ -31,6 +39,10 @@
   background-color: gray;
   color:white;
 
+}
+/*producto*/
+.nombres{
+    color:#610B21;
 }
 /*-carrusel-*/
 .carousel-inner{

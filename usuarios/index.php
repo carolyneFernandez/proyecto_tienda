@@ -71,6 +71,54 @@ session_start();
  </a>
     </div>
   </div>
+
+
+<div class="col-xs-3" id="div" style="width: 22%">
+   <div class="thumbnail" style="
+   border: 1px solid black;">
+
+      <div class="caption">
+          <h3 class="nombres">TODA ROPA DE MUJER</h3>
+              <p>Tenemos infinidad de Ropa Para Mujer Accede para Verla
+              </p>
+          <p>
+          <img src="../imagenes/blusa1.jpg"  style="width: 100%">
+
+          </p>
+      </div>
+   </div>
+ </div>
+ <div class="col-xs-3" id="div" style="width:21.5%">
+    <div class="thumbnail" style="
+    border: 1px solid black;">
+
+       <div class="caption">
+           <h3 class="nombres">TODA ROPA DE HOMBRE</h3>
+               <p>Tenemos la ropa de Moda para los Hombres de ahora
+               </p>
+           <p>
+           <img src="../imagenes/chaquetah2.jpg" style="width: 100%">
+
+           </p>
+       </div>
+    </div>
+  </div>
+  <div class="col-xs-3" id="div" style="width: 26%">
+     <div class="thumbnail" style="
+     border: 1px solid black;">
+
+        <div class="caption">
+            <h3 class="nombres">PROXIMAMENTE </h3>
+                <p>Proximamente Ropa para los Peques y consentidos de la Casa
+                </p>
+            <p>
+            <img src="../imagenes/bebe.jpg"  style="width: 100%">
+
+            </p>
+        </div>
+     </div>
+   </div>
+
 </div>
 <?php
 include "../plantilla/foot.php"
