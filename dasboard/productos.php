@@ -18,7 +18,7 @@
     </head>
     <body>
       <?php
-          include "../plantilla/cabeceradmin.php"
+          include "cabeceradmin.php"
       ?>
 <center>
   <h1>CANTIDAD DE ROPA POR CATEGORIA</h1>

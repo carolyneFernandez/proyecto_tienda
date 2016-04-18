@@ -18,7 +18,7 @@
     </head>
     <body>
       <?php
-          include "../plantilla/cabeceradmin.php"
+          include "cabeceradmin.php"
       ?>
   <center>
     <h1>Producto mas comprados</h1>
