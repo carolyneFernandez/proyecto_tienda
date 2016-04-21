@@ -34,7 +34,7 @@
       	$barplot1->SetWidth(80);
 
       	$grafico->Add($barplot1);
-
+        $barplot1->value->Show();
       	$grafico->Stroke();
         $grafico->stroke("IMG2.PNG");
 

@@ -21,20 +21,36 @@
                  $datos[]=$obj->CANTIDAD;
                   $label[]=$obj->categoria;
                 }
-   $grafico = new Graph(1200,500,"auto");
- 	$grafico->SetScale("textlin");
-   $grafico->xaxis->title->Set("CATEGORIA");
-   $grafico->xaxis->SetTickLabels($label);
-   $grafico->yaxis->title->Set("CANTIDAD");
+                $width=400;
+                $height=500;
 
+                // Set the basic parameters of the graph
+                $graph = new Graph($width,$height);
+                $graph->SetScale('textlin');
 
- 	$barplot1=new BarPlot($datos);
- 	$barplot1->SetFillGradient("#BE81F7","#E3CEF6",GRAD_HOR);
- 	$barplot1->SetWidth(80);
+                $top = 60;
+                $bottom = 30;
+                $left = 80;
+                $right = 30;
+                $graph->Set90AndMargin($left,$right,$top,$bottom);
+                $graph->xaxis->SetLabelAlign('right','center','right');
 
- 	$grafico->Add($barplot1);
+                // Label align for Y-axis
+                $graph->yaxis->SetLabelAlign('center','bottom');
 
- $grafico->Stroke();
+                $graph->xaxis->SetTickLabels($label);
+                $graph->title->Set('PRENDAS POR CATEGORIA');
+
+                // Create a bar pot
+                $bplot = new BarPlot($datos);
+                $bplot->SetFillColor('orange');
+                $bplot->SetWidth(0.8);
+                $bplot->SetYMin(1);
+
+                $graph->Add($bplot);
+  $bplot->value->Show();
+                $graph->Stroke();
+
 
 
  }

@@ -21,9 +21,10 @@
           include "cabeceradmin.php"
       ?>
   <center>
-    <h1>Producto mas comprados</h1>
-  </center>
+
+
     <img src="./php/pedidosmascomprado.php" />
+    </center>
     <?php
 
         include "../plantilla/foot.php"
