@@ -45,7 +45,8 @@ session_start();
             }
         }
       }else{
-include("../plantilla/alert.php");
+         header("Location: ../instalacion.php");
+/*include("../plantilla/alert.php");*/
 }
        unset($connection);
       ?>
