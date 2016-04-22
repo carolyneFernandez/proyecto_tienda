@@ -27,7 +27,7 @@ $result=$connection->query($consulta);
 
 
 // Create the Pie Graph.
-$graph = new PieGraph(1065,300);
+$graph = new PieGraph(1065,500);
 $graph->SetShadow();
 
 // Set A title for the plot
