@@ -108,7 +108,8 @@ $pais=$_POST['pais'];
       $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
       if($connection->connect_errno)
       {
-          printf("ERROR AL INTENTAR CONECTARSE A LA BASE DE DATOS",$connection->connect_errno);
+          header('Location:../instalacion.php');
+        
           exit();
 
       }
@@ -125,6 +126,7 @@ VALUES (NULL, '$nombre', '$apellido', '$dni', '$localidad', '$provincia', '$pais
               header('Location:index.php?mensaje=2');
 
           }else{
+
               echo $connection->error;
 
           }
