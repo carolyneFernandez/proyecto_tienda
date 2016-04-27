@@ -47,6 +47,16 @@ u.codusuario=p.codusuario join incluyen i on p.codpedido=i.codpedido join produc
           <table style="border:1px solid black" class="table  table-bordered table-hover table-condensed">
           <thead>
             <tr class="info" >
+              <th colspan="5">
+                <CENTER>
+                  TABLA DE PEDIDOS
+                </CENTER>
+              </th colspan="1">
+              <th>
+              DESCARGAS<a href="../pdf/pedidos.php" ><span class="glyphicon glyphicon-download-alt"></span></a>
+              </th>
+            </tr>
+            <tr class="info" >
               <th>Nombre del Cliente</th>
               <th>Fecha del pedido</th>
               <th>Direccion del pedido</th>

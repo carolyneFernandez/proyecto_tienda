@@ -5,7 +5,15 @@ $connection->query("CREATE TABLE IF NOT EXISTS `colores` (
   PRIMARY KEY (`idcolor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
 
- 
+  //$connection->query();
+
+  $connection->query("INSERT INTO `colores` (`idcolor`, `nombrecolor`) VALUES
+  (30, 'Negro'),
+  (31, 'Rojo'),
+  (32, 'Gris'),
+  (33, 'Marron'),
+  (34, 'Blanco'),
+  (35, 'Verde');");
 
     $connection->query("CREATE TABLE IF NOT EXISTS `colorproducto` (
       `idrelacion` int(6) NOT NULL AUTO_INCREMENT,
@@ -16,256 +24,7 @@ $connection->query("CREATE TABLE IF NOT EXISTS `colores` (
       KEY `fk_colorproducto_2_idx` (`codproducto`)
     ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1078 ;");
 
-   
-
-
-    $connection->query("CREATE TABLE IF NOT EXISTS `distribuidor` (
-      `coddistribuidor` int(6) NOT NULL AUTO_INCREMENT,
-      `nombre` varchar(35) NOT NULL,
-      `localidad` varchar(45) NOT NULL,
-      `provincia` varchar(45) NOT NULL,
-      `cif` varchar(9) NOT NULL,
-      PRIMARY KEY (`coddistribuidor`)
-    ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=506 ;");
-
-  
-
-
-    $connection->query("CREATE TABLE IF NOT EXISTS `incluyen` (
-      `codproducto` int(6) NOT NULL,
-      `codpedido` int(6) NOT NULL,
-      `cantidad` int(9) NOT NULL,
-      PRIMARY KEY (`codproducto`,`codpedido`),
-      KEY `fk_incluyen_1_idx` (`codpedido`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
-
-
-    
-    $connection->query("CREATE TABLE IF NOT EXISTS `pedidos` (
-  `codpedido` int(6) NOT NULL AUTO_INCREMENT,
-  `codusuario` int(6) NOT NULL,
-  `fechaemision` date NOT NULL,
-  PRIMARY KEY (`codpedido`),
-  KEY `fk_pedidos_1_idx` (`codusuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;");
-
-   
-
-    $connection->query("CREATE TABLE IF NOT EXISTS `producto` (
-      `codproducto` int(6) NOT NULL AUTO_INCREMENT,
-      `coddistribuidor` int(6) NOT NULL,
-      `nombre` varchar(50) NOT NULL,
-      `descripcion` varchar(3000) NOT NULL,
-      `stock` int(6) NOT NULL,
-      `foto` varchar(200) NOT NULL,
-      `categoria` varchar(30) NOT NULL,
-      `precio` double(4,2) NOT NULL,
-      `sexo` varchar(10) NOT NULL,
-      PRIMARY KEY (`codproducto`),
-      KEY `fk_producto_1_idx` (`coddistribuidor`)
-    ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=144 ;");
-
-    
-    $connection->query("CREATE TABLE IF NOT EXISTS `tallas` (
-      `idtalla` int(4) NOT NULL DEFAULT '0',
-      `nombretalla` varchar(10) DEFAULT NULL,
-      PRIMARY KEY (`idtalla`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
-
-   
-
-    $connection->query("CREATE TABLE IF NOT EXISTS `tallasproducto` (
-      `idrelacion` int(6) NOT NULL AUTO_INCREMENT,
-      `codproducto` int(6) NOT NULL,
-      `tallas` int(6) NOT NULL,
-      PRIMARY KEY (`idrelacion`),
-      KEY `fk_tallasproducto_1_idx` (`codproducto`),
-      KEY `fk_tallasproducto_2_idx` (`tallas`)
-    ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=386 ;");
-
-   
-
-    $connection->query("CREATE TABLE IF NOT EXISTS `usuarios` (
-      `codusuario` int(6) NOT NULL AUTO_INCREMENT,
-      `Nombre` varchar(20) NOT NULL,
-      `apellido` varchar(30) NOT NULL,
-      `dni` varchar(9) NOT NULL,
-      `localidad` varchar(45) NOT NULL,
-      `provincia` varchar(30) NOT NULL,
-      `pais` varchar(30) NOT NULL,
-      `administrador` int(2) NOT NULL,
-      `direccion` varchar(30) NOT NULL,
-      `passwd` varchar(100) NOT NULL,
-      `telefono` int(9) NOT NULL,
-      `estilo` int(1) NOT NULL,
-      PRIMARY KEY (`codusuario`)
-    ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;");
-
-    
-
-    $connection->query("ALTER TABLE `colorproducto`
-      ADD CONSTRAINT `fk_colorproducto_1` FOREIGN KEY (`idcolor`) REFERENCES `colores` (`idcolor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-      ADD CONSTRAINT `fk_colorproducto_2` FOREIGN KEY (`codproducto`) REFERENCES `producto` (`codproducto`) ON DELETE CASCADE ON UPDATE CASCADE;");
-
-    $connection->query("ALTER TABLE `incluyen`
-      ADD CONSTRAINT `fk_incluyen_1` FOREIGN KEY (`codpedido`) REFERENCES `pedidos` (`codpedido`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-      ADD CONSTRAINT `fk_incluyen_2` FOREIGN KEY (`codproducto`) REFERENCES `producto` (`codproducto`) ON DELETE CASCADE ON UPDATE CASCADE;");
-
-    $connection->query("ALTER TABLE `pedidos`
-  ADD CONSTRAINT `fk_pedido1` FOREIGN KEY (`codusuario`) REFERENCES `usuarios` (`codusuario`) ON DELETE CASCADE ON UPDATE CASCADE;");
-
-    $connection->query("ALTER TABLE `producto`
-      ADD CONSTRAINT `fk_producto_1` FOREIGN KEY (`coddistribuidor`) REFERENCES `distribuidor` (`coddistribuidor`) ON DELETE CASCADE ON UPDATE CASCADE;");
-
-    $connection->query("ALTER TABLE `tallasproducto`
-      ADD CONSTRAINT `fk_tallasproducto_1` FOREIGN KEY (`codproducto`) REFERENCES `producto` (`codproducto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-      ADD CONSTRAINT `fk_tallasproducto_2` FOREIGN KEY (`tallas`) REFERENCES `tallas` (`idtalla`) ON DELETE CASCADE ON UPDATE CASCADE;");
-
-
-$connection->query("INSERT INTO `usuarios` (`codusuario`, `Nombre`, `apellido`, `dni`, `localidad`, `provincia`, `pais`, `administrador`, `direccion`, `passwd`, `telefono`, `estilo`) VALUES
-    (0, 'carolyne', 'fernandez', '20503311F', 'sevilla', 'Sevilla', 'ESPAÃ‘A', 0, 'carretera sevilla-lora 14', '2602fb88a05e5e75ad1f2c35475d2c76', 993240034, 0),
-    (2, 'noelia', 'carrasco', '20503313D', 'sevilla', 'sevilla', 'Espaï¿½a', 1, 'calle paruro nï¿½15', '17d7cd52cd18e7bab99bb71de1669d95', 684065028, 2),
-    (4, 'rosario', 'lopez', '20658742K', 'lima', 'Lima', 'Peru', 1, 'jr. ancash 1634', '865cc410a1b7c60ae8a38c8761b2b342', 987423541, 0),
-    (5, 'jose', 'De las Heras', '20503311Z', 'gerena', 'Sevilla', 'EspaÃ±a', 1, 'carretera sevilla-lora numero ', '662eaa47199461d01a623884080934ab', 98742354, 1),
-    (7, 'fe', '', '', 'r', 'd', 'd', 1, 'd', 'a684eceee76fc522773286a895bc8436', 0, 0);");    
- $connection->query("INSERT INTO `pedidos` (`codpedido`, `codusuario`, `fechaemision`) VALUES
-    (1, 2, '2016-02-01'),
-    (2, 2, '2016-02-02'),
-    (3, 4, '2016-02-02'),
-    (4, 4, '2016-02-06'),
-    (5, 0, '2016-02-24'),
-    (6, 0, '2016-02-24'),
-    (7, 0, '2016-02-26'),
-    (8, 0, '2016-02-26'),
-
-    (9, 0, '2016-02-29'),
-    (10, 0, '2016-03-01'),
-    (11, 0, '2016-03-02'),
-    (12, 0, '2016-03-02'),
-
-    (13, 0, '2016-03-04'),
-    (14, 0, '2016-03-04'),
-    (15, 0, '2016-03-21'),
-    (16, 5, '2016-03-23');");
- $connection->query("INSERT INTO `tallasproducto` (`idrelacion`, `codproducto`, `tallas`) VALUES
-
-    (211, 104, 10004),
-    (212, 104, 10002),
-    (230, 103, 10001),
-    (232, 103, 10003),
-
-    (241, 103, 10004),
-    (242, 103, 10005),
-    (244, 104, 10003),
-    (245, 104, 10005),
-    (249, 106, 10001),
-    (250, 106, 10002),
-    (251, 106, 10003),
-    (252, 106, 10004),
-    (253, 106, 10005),
-    (254, 107, 10001),
-    (255, 107, 10002),
-    (256, 107, 10003),
-    (257, 107, 10004),
-
-    (258, 107, 10005),
-    (259, 108, 10001),
-    (261, 103, 10004),
-    (262, 108, 10002),
-
-    (264, 108, 10001),
-    (282, 100, 10002),
-    (283, 100, 10004),
-    (287, 100, 10004),
-
-    (300, 103, 10001),
-    (303, 103, 10003),
-
-    (312, 100, 10002),
-    (313, 100, 10001),
-    (314, 100, 10005),
-    (315, 100, 10003),
-    (316, 107, 10001),
-    (317, 108, 10005),
-    (318, 108, 10004),
-    (319, 112, 10002),
-
-    (320, 109, 10003),
-    (321, 110, 10003),
-    (322, 110, 10002),
-    (324, 112, 10003),
-    (325, 131, 10005),
-    (326, 131, 10004),
-    (327, 131, 10002),
-    (328, 130, 10003),
-
-    (329, 130, 10005),
-    (330, 130, 10001),
-    (331, 120, 10002),
-    (332, 117, 10002),
-    (333, 120, 10005),
-    (335, 113, 10005),
-    (336, 116, 10003),
-    (337, 116, 10004),
-    (338, 120, 10005),
-    (339, 116, 10002),
-    (340, 116, 10005),
-
-    (341, 116, 10005),
-    (343, 116, 10005),
-    (344, 116, 10001),
-    (345, 103, 10002),
-    (346, 111, 10004),
-    (347, 111, 10004),
-    (348, 111, 10005),
-    (349, 120, 10001),
-    (350, 120, 10003),
-    (351, 111, 10003),
-    (352, 130, 10004),
-    (353, 142, 10004),
-    (354, 142, 10005),
-    (355, 142, 10001),
-    (356, 142, 10003),
-    (357, 143, 10005),
-    (358, 143, 10004),
-    (359, 143, 10002),
-    (360, 143, 10003),
-    (361, 143, 10003),
-
-    (362, 143, 10001),
-    (363, 137, 10004),
-    (364, 137, 10004),
-    (365, 137, 10002),
-    (366, 137, 10005),
-
-    (367, 137, 10001),
-    (368, 138, 10003),
-    (369, 138, 10005),
-    (371, 138, 10002),
-    (372, 138, 10001),
-    (373, 139, 10004),
-    (374, 139, 10005),
-    (375, 139, 10001),
-    (376, 139, 10002),
-    (377, 140, 10005),
-    (378, 140, 10004),
-    (379, 140, 10001),
-    (380, 140, 10003),
-    (381, 141, 10005),
-    (382, 141, 10004),
-    (383, 141, 10003),
-    (384, 141, 10002),
-
-    (385, 141, 10001);");
- $connection->query("INSERT INTO `tallas` (`idtalla`, `nombretalla`) VALUES
-    (10001, 'XS'),
-    (10002, 'S'),
-    (10003, 'M'),
-    (10004, 'L'),
-
-    (10005, 'XL');");
-
- $connection->query("INSERT INTO `colorproducto` (`idrelacion`, `idcolor`, `codproducto`) VALUES
+    $connection->query("INSERT INTO `colorproducto` (`idrelacion`, `idcolor`, `codproducto`) VALUES
     (958, 31, 103),
     (959, 30, 103),
     (964, 30, 104),
@@ -284,7 +43,6 @@ $connection->query("INSERT INTO `usuarios` (`codusuario`, `Nombre`, `apellido`, 
     (986, 30, 100),
     (991, 35, 100),
     (994, 30, 100),
-
     (995, 30, 100),
     (996, 30, 100),
     (997, 30, 100),
@@ -355,24 +113,35 @@ $connection->query("INSERT INTO `usuarios` (`codusuario`, `Nombre`, `apellido`, 
     (1076, 30, 141),
     (1077, 31, 141);");
 
- //$connection->query();
-
-  $connection->query("INSERT INTO `colores` (`idcolor`, `nombrecolor`) VALUES
-  (30, 'Negro'),
-  (31, 'Rojo'),
-  (32, 'Gris'),
-  (33, 'Marron'),
-  (34, 'Blanco'),
-  (35, 'Verde');");
 
 
-  $connection->query("INSERT INTO `distribuidor` (`coddistribuidor`, `nombre`, `localidad`, `provincia`, `cif`) VALUES
+    $connection->query("CREATE TABLE IF NOT EXISTS `distribuidor` (
+      `coddistribuidor` int(6) NOT NULL AUTO_INCREMENT,
+      `nombre` varchar(35) NOT NULL,
+      `localidad` varchar(45) NOT NULL,
+      `provincia` varchar(45) NOT NULL,
+      `cif` varchar(9) NOT NULL,
+      PRIMARY KEY (`coddistribuidor`)
+    ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=506 ;");
+
+    $connection->query("INSERT INTO `distribuidor` (`coddistribuidor`, `nombre`, `localidad`, `provincia`, `cif`) VALUES
     (500, 'mango', 'sevilla', 'sevilla', '111111153'),
     (501, 'puma', 'madrid', 'madrid', '222222244'),
     (502, 'adidas', 'barcelona', 'barcelona', '333333333'),
     (505, 'Nike', 'sevilla', 'sevilla', '222224255');");
 
-$connection->query("INSERT INTO `incluyen` (`codproducto`, `codpedido`, `cantidad`) VALUES
+
+
+    $connection->query("CREATE TABLE IF NOT EXISTS `incluyen` (
+      `codproducto` int(6) NOT NULL,
+      `codpedido` int(6) NOT NULL,
+      `cantidad` int(9) NOT NULL,
+      PRIMARY KEY (`codproducto`,`codpedido`),
+      KEY `fk_incluyen_1_idx` (`codpedido`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+
+
+    $connection->query("INSERT INTO `incluyen` (`codproducto`, `codpedido`, `cantidad`) VALUES
     (100, 1, 10),
     (100, 3, 10),
     (100, 5, 1),
@@ -390,7 +159,48 @@ $connection->query("INSERT INTO `incluyen` (`codproducto`, `codpedido`, `cantida
     (116, 12, 1);");
 
 
-$connection->query("INSERT INTO `producto` (`codproducto`, `coddistribuidor`, `nombre`, `descripcion`, `stock`, `foto`, `categoria`, `precio`, `sexo`) VALUES
+
+    $connection->query("CREATE TABLE IF NOT EXISTS `pedidos` (
+  `codpedido` int(6) NOT NULL AUTO_INCREMENT,
+  `codusuario` int(6) NOT NULL,
+  `fechaemision` date NOT NULL,
+  PRIMARY KEY (`codpedido`),
+  KEY `fk_pedidos_1_idx` (`codusuario`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;");
+
+    $connection->query("INSERT INTO `pedidos` (`codpedido`, `codusuario`, `fechaemision`) VALUES
+    (1, 2, '2016-02-01'),
+    (2, 2, '2016-02-02'),
+    (3, 4, '2016-02-02'),
+    (4, 4, '2016-02-06'),
+    (5, 0, '2016-02-24'),
+    (6, 0, '2016-02-24'),
+    (7, 0, '2016-02-26'),
+    (8, 0, '2016-02-26'),
+    (9, 0, '2016-02-29'),
+    (10, 0, '2016-03-01'),
+    (11, 0, '2016-03-02'),
+    (12, 0, '2016-03-02'),
+    (13, 0, '2016-03-04'),
+    (14, 0, '2016-03-04'),
+    (15, 0, '2016-03-21'),
+    (16, 5, '2016-03-23');");
+
+    $connection->query("CREATE TABLE IF NOT EXISTS `producto` (
+      `codproducto` int(6) NOT NULL AUTO_INCREMENT,
+      `coddistribuidor` int(6) NOT NULL,
+      `nombre` varchar(50) NOT NULL,
+      `descripcion` varchar(3000) NOT NULL,
+      `stock` int(6) NOT NULL,
+      `foto` varchar(200) NOT NULL,
+      `categoria` varchar(30) NOT NULL,
+      `precio` double(4,2) NOT NULL,
+      `sexo` varchar(10) NOT NULL,
+      PRIMARY KEY (`codproducto`),
+      KEY `fk_producto_1_idx` (`coddistribuidor`)
+    ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=144 ;");
+
+    $connection->query("INSERT INTO `producto` (`codproducto`, `coddistribuidor`, `nombre`, `descripcion`, `stock`, `foto`, `categoria`, `precio`, `sexo`) VALUES
     (100, 502, 'AMERICANA ', 'Tejido con textura, manga larga, dos bolsillos de cremallera, forro interior.\r\nï¿½ Largo de costado 34.6 cm\r\nï¿½ Largo de la espalda 56.4 cm\r\nEstas medidas estï¿½n calculadas para una talla M', 0, 'chaqueta1.jpg', 'chaquetas', 52.50, 'mujer'),
     (103, 505, 'AMERICANA SOLAPA CONTRASTE', 'Solapas, ribetes en contraste, cierre de botï¿½n, bolsillos de solapa, forro interior.\r\nï¿½ Largo de costado 38.8 cm\r\nï¿½ Largo de la espalda 59.6 cm\r\nEstas medidas estï¿½n calculadas para una talla 38 espaï¿½ola.', -2, 'chaqueta2.jpg', 'chaquetas', 69.99, 'mujer'),
     (104, 500, 'CAZADORA BIKER CREMALLERAS', 'cuello redondo con botón a presión, bolsillos de cremallera laterales, cierre de cremallera en la parte delantera, manga larga con cremallera.\r\n· Largo de costado 34.1 cm\r\n· Largo de la espalda 55.0 cm\r\nEstas medidas están calculadas para una talla M española.', 56, 'chaqueta3.jpg', 'chaquetas', 85.40, 'mujer'),
@@ -419,4 +229,166 @@ $connection->query("INSERT INTO `producto` (`codproducto`, `coddistribuidor`, `n
     (142, 500, 'HIM SPRAY - Vaqueros slim fit - spray ', 'CaracterÃ­sticas del producto\r\n\r\nLargo: clÃ¡sico\r\nAjuste: pitillo\r\nLargo entrepierna: 75 cm\r\nMaterial/composiciÃ³n: vaquero\r\nModelo, altura: 188 cm, lleva la talla 30-31\r\nLargo exterior de la pierna: 104 cm\r\nGrosor del relleno: sin relleno\r\nCierre: cremallera invisible\r\nBolsillos: traseros, laterales\r\nEstampado: unicolor\r\nCintura: normal\r\nMaterial exterior: 70% algodÃ³n, 28% poliÃ©ster, 2% elastano', 76, 'pantalonh1.jpg', 'pantalones', 46.00, 'hombre'),
     (143, 500, 'Vaqueros slim fit - moon washed', 'CaracterÃ­sticas del producto\r\n\r\nLargo: largo\r\nAjuste: slim fit\r\nLargo entrepierna: 78 cm\r\nMaterial/composiciÃ³n: vaquero\r\nModelo, altura: 188 cm, lleva la talla 32x32\r\nLargo exterior de la pierna: 103 cm\r\nCierre: cremallera invisible\r\nBolsillos: traseros, laterales\r\nEstampado: jaspeado\r\nCintura: normal\r\nMaterial exterior: 98% algodÃ³n, 2% elastano\r\nCuidados: no utilizar secadora, lavar a mÃ¡quina ', 0, 'pantalonh2.jpg', 'pantalones', 64.00, 'hombre');");
 
+    $connection->query("CREATE TABLE IF NOT EXISTS `tallas` (
+      `idtalla` int(4) NOT NULL DEFAULT '0',
+      `nombretalla` varchar(10) DEFAULT NULL,
+      PRIMARY KEY (`idtalla`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
 
+    $connection->query("INSERT INTO `tallas` (`idtalla`, `nombretalla`) VALUES
+    (10001, 'XS'),
+    (10002, 'S'),
+    (10003, 'M'),
+    (10004, 'L'),
+    (10005, 'XL');");
+
+    $connection->query("CREATE TABLE IF NOT EXISTS `tallasproducto` (
+      `idrelacion` int(6) NOT NULL AUTO_INCREMENT,
+      `codproducto` int(6) NOT NULL,
+      `tallas` int(6) NOT NULL,
+      PRIMARY KEY (`idrelacion`),
+      KEY `fk_tallasproducto_1_idx` (`codproducto`),
+      KEY `fk_tallasproducto_2_idx` (`tallas`)
+    ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=386 ;");
+
+    $connection->query("INSERT INTO `tallasproducto` (`idrelacion`, `codproducto`, `tallas`) VALUES
+    (211, 104, 10004),
+    (212, 104, 10002),
+    (230, 103, 10001),
+    (232, 103, 10003),
+    (241, 103, 10004),
+    (242, 103, 10005),
+    (244, 104, 10003),
+    (245, 104, 10005),
+    (249, 106, 10001),
+    (250, 106, 10002),
+    (251, 106, 10003),
+    (252, 106, 10004),
+    (253, 106, 10005),
+    (254, 107, 10001),
+    (255, 107, 10002),
+    (256, 107, 10003),
+    (257, 107, 10004),
+    (258, 107, 10005),
+    (259, 108, 10001),
+    (261, 103, 10004),
+    (262, 108, 10002),
+    (264, 108, 10001),
+    (282, 100, 10002),
+    (283, 100, 10004),
+    (287, 100, 10004),
+    (300, 103, 10001),
+    (303, 103, 10003),
+    (312, 100, 10002),
+    (313, 100, 10001),
+    (314, 100, 10005),
+    (315, 100, 10003),
+    (316, 107, 10001),
+    (317, 108, 10005),
+    (318, 108, 10004),
+    (319, 112, 10002),
+    (320, 109, 10003),
+    (321, 110, 10003),
+    (322, 110, 10002),
+    (324, 112, 10003),
+    (325, 131, 10005),
+    (326, 131, 10004),
+    (327, 131, 10002),
+    (328, 130, 10003),
+    (329, 130, 10005),
+    (330, 130, 10001),
+    (331, 120, 10002),
+    (332, 117, 10002),
+    (333, 120, 10005),
+    (335, 113, 10005),
+    (336, 116, 10003),
+    (337, 116, 10004),
+    (338, 120, 10005),
+    (339, 116, 10002),
+    (340, 116, 10005),
+    (341, 116, 10005),
+    (343, 116, 10005),
+    (344, 116, 10001),
+    (345, 103, 10002),
+    (346, 111, 10004),
+    (347, 111, 10004),
+    (348, 111, 10005),
+    (349, 120, 10001),
+    (350, 120, 10003),
+    (351, 111, 10003),
+    (352, 130, 10004),
+    (353, 142, 10004),
+    (354, 142, 10005),
+    (355, 142, 10001),
+    (356, 142, 10003),
+    (357, 143, 10005),
+    (358, 143, 10004),
+    (359, 143, 10002),
+    (360, 143, 10003),
+    (361, 143, 10003),
+    (362, 143, 10001),
+    (363, 137, 10004),
+    (364, 137, 10004),
+    (365, 137, 10002),
+    (366, 137, 10005),
+    (367, 137, 10001),
+    (368, 138, 10003),
+    (369, 138, 10005),
+    (371, 138, 10002),
+    (372, 138, 10001),
+    (373, 139, 10004),
+    (374, 139, 10005),
+    (375, 139, 10001),
+    (376, 139, 10002),
+    (377, 140, 10005),
+    (378, 140, 10004),
+    (379, 140, 10001),
+    (380, 140, 10003),
+    (381, 141, 10005),
+    (382, 141, 10004),
+    (383, 141, 10003),
+    (384, 141, 10002),
+    (385, 141, 10001);");
+
+    $connection->query("CREATE TABLE IF NOT EXISTS `usuarios` (
+      `codusuario` int(6) NOT NULL AUTO_INCREMENT,
+      `Nombre` varchar(20) NOT NULL,
+      `apellido` varchar(30) NOT NULL,
+      `dni` varchar(9) NOT NULL,
+      `localidad` varchar(45) NOT NULL,
+      `provincia` varchar(30) NOT NULL,
+      `pais` varchar(30) NOT NULL,
+      `administrador` int(2) NOT NULL,
+      `direccion` varchar(30) NOT NULL,
+      `passwd` varchar(100) NOT NULL,
+      `telefono` int(9) NOT NULL,
+      `estilo` int(1) NOT NULL,
+      PRIMARY KEY (`codusuario`)
+    ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;");
+
+    $connection->query("INSERT INTO `usuarios` (`codusuario`, `Nombre`, `apellido`, `dni`, `localidad`, `provincia`, `pais`, `administrador`, `direccion`, `passwd`, `telefono`, `estilo`) VALUES
+    (0, 'carolyne', 'fernandez', '20503311F', 'sevilla', 'Sevilla', 'ESPAÃ‘A', 0, 'carretera sevilla-lora 14', '2602fb88a05e5e75ad1f2c35475d2c76', 993240034, 0),
+    (2, 'noelia', 'carrasco', '20503313D', 'sevilla', 'sevilla', 'Espaï¿½a', 1, 'calle paruro nï¿½15', '17d7cd52cd18e7bab99bb71de1669d95', 684065028, 2),
+    (4, 'rosario', 'lopez', '20658742K', 'lima', 'Lima', 'Peru', 1, 'jr. ancash 1634', '865cc410a1b7c60ae8a38c8761b2b342', 987423541, 0),
+    (5, 'jose', 'De las Heras', '20503311Z', 'gerena', 'Sevilla', 'EspaÃ±a', 1, 'carretera sevilla-lora numero ', '662eaa47199461d01a623884080934ab', 98742354, 1),
+    (7, 'fe', '', '', 'r', 'd', 'd', 1, 'd', 'a684eceee76fc522773286a895bc8436', 0, 0);");
+
+    $connection->query("ALTER TABLE `colorproducto`
+      ADD CONSTRAINT `fk_colorproducto_1` FOREIGN KEY (`idcolor`) REFERENCES `colores` (`idcolor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+      ADD CONSTRAINT `fk_colorproducto_2` FOREIGN KEY (`codproducto`) REFERENCES `producto` (`codproducto`) ON DELETE CASCADE ON UPDATE CASCADE;");
+
+    $connection->query("ALTER TABLE `incluyen`
+      ADD CONSTRAINT `fk_incluyen_1` FOREIGN KEY (`codpedido`) REFERENCES `pedidos` (`codpedido`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+      ADD CONSTRAINT `fk_incluyen_2` FOREIGN KEY (`codproducto`) REFERENCES `producto` (`codproducto`) ON DELETE CASCADE ON UPDATE CASCADE;");
+
+    $connection->query("ALTER TABLE `pedidos`
+  ADD CONSTRAINT `fk_pedido1` FOREIGN KEY (`codusuario`) REFERENCES `usuarios` (`codusuario`) ON DELETE CASCADE ON UPDATE CASCADE;");
+
+    $connection->query("ALTER TABLE `producto`
+      ADD CONSTRAINT `fk_producto_1` FOREIGN KEY (`coddistribuidor`) REFERENCES `distribuidor` (`coddistribuidor`) ON DELETE CASCADE ON UPDATE CASCADE;");
+
+    $connection->query("ALTER TABLE `tallasproducto`
+      ADD CONSTRAINT `fk_tallasproducto_1` FOREIGN KEY (`codproducto`) REFERENCES `producto` (`codproducto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+      ADD CONSTRAINT `fk_tallasproducto_2` FOREIGN KEY (`tallas`) REFERENCES `tallas` (`idtalla`) ON DELETE CASCADE ON UPDATE CASCADE;");
+
+    

@@ -51,7 +51,7 @@ $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
           <table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed" id="productos">
           <thead>
             <tr class="info" >
-              <th colspan="9">
+              <th colspan="10">
                 <CENTER>
                   TABLA DE PRODUCTOS
                 </CENTER>
