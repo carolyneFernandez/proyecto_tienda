@@ -13,6 +13,7 @@
 
 
 
+
        $consulta="SELECT COUNT(p.codpedido) as precio,DATE_FORMAT(p.fechaemision,'%M') as mes from pedidos p GROUP BY MONTH(p.fechaemision);";
        $result=$connection->query($consulta);
 

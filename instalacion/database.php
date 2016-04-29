@@ -128,25 +128,22 @@ $connection->query("INSERT INTO `usuarios` (`codusuario`, `Nombre`, `apellido`, 
     (4, 'rosario', 'lopez', '20658742K', 'lima', 'Lima', 'Peru', 1, 'jr. ancash 1634', '865cc410a1b7c60ae8a38c8761b2b342', 987423541, 0),
     (5, 'jose', 'De las Heras', '20503311Z', 'gerena', 'Sevilla', 'Espana', 1, 'carretera sevilla-lora 15 ', '662eaa47199461d01a623884080934ab', 98742354, 1),
     (7, 'fe', '', '', 'r', 'd', 'd', 1, 'd', 'a684eceee76fc522773286a895bc8436', 0, 0);");    
- $connection->query("INSERT INTO `pedidos` (`codpedido`, `codusuario`, `fechaemision`) VALUES
-    (1, 2, '2016-02-01'),
-    (2, 2, '2016-02-02'),
-    (3, 4, '2016-02-02'),
-    (4, 4, '2016-02-06'),
-    (5, 0, '2016-02-24'),
-    (6, 0, '2016-02-24'),
-    (7, 0, '2016-02-26'),
-    (8, 0, '2016-02-26'),
 
-    (9, 0, '2016-02-29'),
-    (10, 0, '2016-03-01'),
-    (11, 0, '2016-03-02'),
-    (12, 0, '2016-03-02'),
 
-    (13, 0, '2016-03-04'),
-    (14, 0, '2016-03-04'),
-    (15, 0, '2016-03-21'),
-    (16, 5, '2016-03-23');");
+
+$connection->query("INSERT INTO `pedidos` (`codpedido`, `codusuario`, `fechaemision`) VALUES
+(1, 4, '2016-07-08'),
+(2, 4, '2016-07-08'),
+(3, 4, '2016-07-25'),
+(4, 2, '2016-04-28'),
+(5, 2, '2016-04-28'),
+(6, 2, '2016-02-07'),
+(7, 5, '2016-04-28'),
+(8, 5, '2016-04-28'),
+(9, 5, '2016-07-15');");
+
+
+
  $connection->query("INSERT INTO `tallasproducto` (`idrelacion`, `codproducto`, `tallas`) VALUES
 
     (211, 104, 10004),
@@ -372,22 +369,7 @@ $connection->query("INSERT INTO `usuarios` (`codusuario`, `Nombre`, `apellido`, 
     (502, 'adidas', 'barcelona', 'barcelona', '333333333'),
     (505, 'Nike', 'sevilla', 'sevilla', '222224255');");
 
-$connection->query("INSERT INTO `incluyen` (`codproducto`, `codpedido`, `cantidad`) VALUES
-    (100, 1, 10),
-    (100, 3, 10),
-    (100, 5, 1),
-    (100, 8, 1),
-    (103, 7, 2),
-    (103, 10, 1),
-    (104, 13, 1),
-    (104, 14, 1),
-    (104, 16, 2),
-    (106, 4, 54),
-    (107, 6, 1),
-    (107, 9, 1),
-    (109, 11, 1),
-    (111, 15, 1),
-    (116, 12, 1);");
+
 
 
 $connection->query("INSERT INTO `producto` (`codproducto`, `coddistribuidor`, `nombre`, `descripcion`, `stock`, `foto`, `categoria`, `precio`, `sexo`) VALUES
@@ -419,4 +401,19 @@ $connection->query("INSERT INTO `producto` (`codproducto`, `coddistribuidor`, `n
     (142, 500, 'HIM SPRAY - Vaqueros slim ', 'CaracterÃ­sticas del producto\r\n\r\nLargo: clÃ¡sico\r\nAjuste: pitillo\r\nLargo entrepierna: 75 cm\r\nMaterial/composiciÃ³n: vaquero\r\nModelo, altura: 188 cm, lleva la talla 30-31\r\nLargo exterior de la pierna: 104 cm\r\nGrosor del relleno: sin relleno\r\nCierre: cremallera invisible\r\nBolsillos: traseros, laterales\r\nEstampado: unicolor\r\nCintura: normal\r\nMaterial exterior: 70% algodÃ³n, 28% poliÃ©ster, 2% elastano', 76, 'pantalonh1.jpg', 'pantalones', 46.00, 'hombre'),
     (143, 500, 'Vaqueros slim fit - moon washed', 'CaracterÃ­sticas del producto\r\n\r\nLargo: largo\r\nAjuste: slim fit\r\nLargo entrepierna: 78 cm\r\nMaterial/composiciÃ³n: vaquero\r\nModelo, altura: 188 cm, lleva la talla 32x32\r\nLargo exterior de la pierna: 103 cm\r\nCierre: cremallera invisible\r\nBolsillos: traseros, laterales\r\nEstampado: jaspeado\r\nCintura: normal\r\nMaterial exterior: 98% algodÃ³n, 2% elastano\r\nCuidados: no utilizar secadora, lavar a mÃ¡quina ', 0, 'pantalonh2.jpg', 'pantalones', 64.00, 'hombre');");
 
+$connection->query("INSERT INTO `incluyen` (`codproducto`, `codpedido`, `cantidad`) VALUES
+(104, 1, 2),
+(106, 8, 1),
+(108, 2, 1),
+(108, 3, 1),
+(110, 5, 1),
+(110, 7, 1),
+(111, 8, 1),
+(114, 6, 1),
+(138, 2, 1),
+(139, 4, 1),
+(139, 7, 1),
+(141, 7, 1),
+(142, 2, 1),
+(142, 9, 1);");
 

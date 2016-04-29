@@ -129,19 +129,6 @@ $connection->query("INSERT INTO `usuarios` (`codusuario`, `Nombre`, `apellido`, 
     (5, 'jose', 'De las Heras', '20503311Z', 'gerena', 'Sevilla', 'Espana', 1, 'carretera sevilla-lora 15 ', '662eaa47199461d01a623884080934ab', 98742354, 1),
     (7, 'fe', '', '', 'r', 'd', 'd', 1, 'd', 'a684eceee76fc522773286a895bc8436', 0, 0);");    
 
-
-
-$connection->query("INSERT INTO `pedidos` (`codpedido`, `codusuario`, `fechaemision`) VALUES
-(1, 4, '2016-07-08'),
-(2, 4, '2016-07-08'),
-(3, 4, '2016-07-25'),
-(4, 2, '2016-04-28'),
-(5, 2, '2016-04-28'),
-(6, 2, '2016-02-07'),
-(7, 5, '2016-04-28'),
-(8, 5, '2016-04-28'),
-(9, 5, '2016-07-15');");
-
 $connection->query("INSERT INTO `incluyen` (`codproducto`, `codpedido`, `cantidad`) VALUES
 (104, 1, 2),
 (106, 8, 1),
@@ -157,6 +144,19 @@ $connection->query("INSERT INTO `incluyen` (`codproducto`, `codpedido`, `cantida
 (141, 7, 1),
 (142, 2, 1),
 (142, 9, 1);");
+
+$connection->query("INSERT INTO `pedidos` (`codpedido`, `codusuario`, `fechaemision`) VALUES
+(1, 4, '2016-07-08'),
+(2, 4, '2016-07-08'),
+(3, 4, '2016-07-25'),
+(4, 2, '2016-04-28'),
+(5, 2, '2016-04-28'),
+(6, 2, '2016-02-07'),
+(7, 5, '2016-04-28'),
+(8, 5, '2016-04-28'),
+(9, 5, '2016-07-15');");
+
+
 
  $connection->query("INSERT INTO `tallasproducto` (`idrelacion`, `codproducto`, `tallas`) VALUES
 

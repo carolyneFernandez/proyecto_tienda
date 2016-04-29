@@ -109,7 +109,7 @@ $pais=$_POST['pais'];
       if($connection->connect_errno)
       {
           header('Location:../instalacion.php');
-        
+
           exit();
 
       }
@@ -119,7 +119,7 @@ $pais=$_POST['pais'];
 		}else{
 
 
-		$consulta="INSERT INTO `tienda`.`usuarios` (`codusuario`, `nombre`, `apellido`, `dni`, `localidad`, `provincia`, `pais`, `administrador`, `direccion`, `passwd`)
+		$consulta="INSERT INTO usuarios (`codusuario`, `nombre`, `apellido`, `dni`, `localidad`, `provincia`, `pais`, `administrador`, `direccion`, `passwd`)
 VALUES (NULL, '$nombre', '$apellido', '$dni', '$localidad', '$provincia', '$pais', '1', '$direccion', MD5('$passwd'))";
           if($connection->query($consulta)==true){
 
