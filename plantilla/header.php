@@ -49,7 +49,11 @@
 
         <li><a href="sobre.php">SOBRE NOSOTROS</a></li>
         <li><a href="ubicacion.php">COMO LLEGAR</a></li>
-          <li><a href="estaditicas.php">ESTADISTICAS GENERALES</a></li>
+        <?php
+              if(isset($_SESSION['nombre']) && $_SESSION['nombre'] != ''){ ?>
+        <li><a href="estadisticas.php">ESTADISTICAS GENERALES</a></li>
+          <?php
+        }else {}?>
         <li>
       <?PHP
       if(isset($_SESSION['nombre']) && $_SESSION['nombre'] != ''){

@@ -32,11 +32,8 @@ if ($connection->connect_errno) {
   include "../plantilla/header.php"
 ?>
 
-<center>
-
-
-<h1>Pedidos Realizados por Mes</h1>  </center>
-<img src="./php/general.php" />
+<img src="../dasboard/php/estadisticas.php" />
+<img src="../dasboard/php/estausu.php" />
 <?php
 
   include "../plantilla/foot.php"

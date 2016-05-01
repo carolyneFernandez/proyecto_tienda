@@ -1,7 +1,6 @@
 <?php
-
 include_once("../plantilla/db_configuration.php");
-  include_once("../plantilla/configuration_instalacion.php");
+
   $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
 if ($connection->connect_errno) {
   printf("Connection failed: %s\n", $connection->connect_error);
