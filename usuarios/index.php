@@ -1,8 +1,5 @@
 <?php
 include_once("../plantilla/db_configuration.php");
-if($username=null){
-   header('Location: ../instalacion.php');
-}
   $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
 if ($connection->connect_errno) {
   printf("Connection failed: %s\n", $connection->connect_error);
