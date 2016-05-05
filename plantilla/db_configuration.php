@@ -7,9 +7,23 @@
     $db_password=$_ENV['OPENSHIFT_MYSQL_DB_PASSWORD']; //Openshift db password OPENSHIFT_MYSQL_DB_PASSWORD
     $db_name=$database; //Openshift db name
   } else {
+    if($usernanme=null){
+      header("Location:../instalacion.php");
+      else{
     $db_user=$username; //my db user
     $db_host=$localhost; //my db host
     $db_password=$password; //my db password ORIGINAL
     $db_name=$database; //my db name
   }
+}
+$connection = new mysqli($db_host, $db_user, $db_password, $db_name);
+
+if ($connection->connect_errno) {
+   header("Location: ../instalacion.php");
+printf("Connection failed: %s\n", $connection->connect_error);
+exit();
+
+}else{
+
+}
 ?>

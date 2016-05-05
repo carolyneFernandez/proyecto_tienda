@@ -1,11 +1,6 @@
 <?php
 include_once("../plantilla/db_configuration.php");
-  $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
-if ($connection->connect_errno) {
-  printf("Connection failed: %s\n", $connection->connect_error);
-   header('Location: ../instalacion.php');
 
-}else{
 
 ?>
 <?php
@@ -136,6 +131,3 @@ include "../plantilla/foot.php"
 ?>
 </body>
 </html>
-<?php
-}
-?>
