@@ -9,7 +9,7 @@
   } else {
     if($usernanme=null){
       header("Location:../instalacion.php");
-      else{
+    }else{
     $db_user=$username; //my db user
     $db_host=$localhost; //my db host
     $db_password=$password; //my db password ORIGINAL
