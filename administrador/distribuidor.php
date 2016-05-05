@@ -61,7 +61,7 @@
               <th>Provincia</th>
               <th>CIF</th>
               <th>Editar</th>
-              <th>Eliminar</th>
+              <th>ELIMINAR</th>
 
 
           </thead>
