@@ -1,11 +1,7 @@
 <?php
 include_once("../plantilla/db_configuration.php");
-  $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
-if ($connection->connect_errno) {
-  printf("Connection failed: %s\n", $connection->connect_error);
-   header('Location: ../instalacion.php');
-
-}else{
+$connection = new mysqli($db_host, $db_user, $db_password, $db_name);
+if ($result = $connection->query("SELECT * FROM distribuidor;")){
 
 ?>
 <?php
@@ -137,5 +133,8 @@ include "../plantilla/foot.php"
 </body>
 </html>
 <?php
+}else{
+  printf("Connection failed: %s\n", $connection->connect_error);
+   header('Location: ../instalacion.php');
 }
 ?>
