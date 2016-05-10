@@ -45,8 +45,8 @@ session_start();
             }
         }
       }else{
-    
-include("../plantilla/alert.php");
+
+  header('Location:index.php?mensaje=3');
 }
        unset($connection);
       ?>

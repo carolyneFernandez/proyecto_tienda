@@ -3,9 +3,6 @@
 ?>
 <?php
   session_start();
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -48,12 +45,7 @@
 
          width="600" height="450" frameborder="0"  allowfullscreen></iframe>
       </center>
-      <div>
-
-<P>
-  BARRIADA MARIA AUXILIADORA Nº4 ,ALCALA DE GUADAIRA
-</P>
-      </div>
+    
         </div>
     </body>
 

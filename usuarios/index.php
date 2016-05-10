@@ -109,6 +109,7 @@ session_start();
        </div>
     </div>
   </div>
+
   <div class="col-xs-3" id="div" style="width: 26%">
      <div class="thumbnail" style="
      border: 1px solid black;">
@@ -126,6 +127,7 @@ session_start();
    </div>
 
 </div>
+
 <?php
 include "../plantilla/foot.php"
 

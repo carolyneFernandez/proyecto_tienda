@@ -63,7 +63,8 @@ if($_SESSION["administrador"]!="0"){?>
 <div class="tab-content">
   <div id="home" class="tab-pane fade in active">
 
-    <div class="container well ">
+    <div class="container well " style="
+    margin-bottom: 0px;">
 
       <div class="row">
           <div class="col-xs-12"><h2>Tu Perfil de Usuario</h2></div>
@@ -186,12 +187,28 @@ where u.Nombre='".$_SESSION['nombre']."'")){
 
 
 ?>
-<div class="container">
+
+<div class="container well " style="
+margin-bottom: 0px;">
 
 
     <!-- PRINT THE TABLE AND THE HEADER -->
-    <table style="border:1px solid black" class="table table-bordered table-hover table-condensed" id="pedido">
+    <table style="width: 96%;" class="table table-bordered table-hover table-condensed" id="pedido">
     <thead>
+      <tr class="info" >
+        <th colspan="4">
+          <CENTER>
+              TABLA DE USUARIOS
+          </CENTER>
+
+        </th>
+              <th colspan="2">
+                <CENTER>
+                  DESCARGAR PDF<a href="../pdf/perfil.php" ><span class="glyphicon glyphicon-download-alt"></span></a>
+                </CENTER>
+
+        </th>
+      </tr>
       <tr class="info" >
         <th>Nombre del Cliente</th>
         <th>Fecha del pedido</th>
@@ -235,7 +252,9 @@ where u.Nombre='".$_SESSION['nombre']."'")){
 </div>
 </div>
   <div id="menu2" class="tab-pane fade">
-    <div class="container well " >
+
+        <div class="container well " style="
+        margin-bottom: 0px;">
 
       <div class="row">
           <div><h2>ELIGE EL TEMA</h2></div>
@@ -262,14 +281,23 @@ where u.Nombre='".$_SESSION['nombre']."'")){
       $obj = $result->fetch_object();
 
       ?>
-          <form  action="modificatemas.php" class="form-horizontal " method="POST">
+          <form  action="modificatemas.php" class="form-horizontal " method="POST" style="margin: 3%;">
             <form>
-              <input class="form-control" name="id" type="hidden"  value=<?php echo $obj->codusuario;?> >
-      <input type="radio" name="procesar" value="0" > <img src="../imagenes/plantillas/default.png" height="142" width="142">
-      <input type="radio" name="procesar" value="1"><img src="../imagenes/plantillas/plantilla1.png" height="142" width="142">
-      <input type="radio" name="procesar" value="2"><img src="../imagenes/plantillas/plantilla2.png" height="142" width="142">
+                <input class="form-control" name="id" type="hidden"  value=<?php echo $obj->codusuario;?> >
+              <div style="display: inline;margin: 5%;">
+                  <input type="radio" name="procesar" value="0" > <img src="../imagenes/plantillas/default.png" height="142" width="142">
+              </div>
+              <div  style="margin: 9%;display: inline;">
+                      <input type="radio" name="procesar" value="1"><img src="../imagenes/plantillas/plantilla1.png" height="142" width="142">
+              </div>
+              <div style="margin-left: 3%;display: inline;">
+                <input type="radio" name="procesar" value="2"><img src="../imagenes/plantillas/plantilla2.png" height="142" width="142">
+              </div>
 
-      <button type="submit" class="btn btn-primary">MODIFICA</button>
+
+
+
+      <button type="submit" class="btn btn-primary" style="margin-left: 50%;float: left;margin-top: 4%;">MODIFICA</button>
 
     </form>
     </form>

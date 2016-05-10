@@ -1,6 +1,12 @@
 /*CSS DEL INDEX*/
 /*--HEADER*/
 /*index*/
+#parrafocenter {
+  text-align: center;
+    color: #8A0829;
+    font-weight: bold;
+        margin-top: 5%;
+}
 #div{
   margin-top:5%;
   margin-left:8%;
@@ -9,7 +15,7 @@
   width:100%;
 }
 #titulo{
-  color:black;
+  color:#8A0829;
   font-family: inherit;
   font-weight: bold;
 }
@@ -26,6 +32,11 @@
 
 
 }
+.thumbnail{
+
+    border: 1px solid black;
+}
+
 #cabeza a{
   color:red;
   font-family: roboto;
@@ -34,10 +45,12 @@
   text-transform: uppercase;
 }
 .container{
+color:#8A0829;
+text-align: center;
   width: 100%;
   height: 15%;
   background-color: gray;
-  color:white;
+
 
 }
 /*producto*/
@@ -161,4 +174,8 @@ font-weight: bold;
 table{
   color:black;
   margin:3%;
+}
+/*dasboard*/
+#dasboard{
+    margin-left: 5%;
 }

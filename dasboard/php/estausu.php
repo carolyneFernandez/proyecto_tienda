@@ -29,7 +29,6 @@ session_start();
 
   $grafico->SetMargin(40,30,30,40);
 
-  $grafico->title->Set('PEDIDOS REALIZADOS POR MES');
 
    $grafico->xaxis->title->Set("MES");
 
@@ -39,7 +38,7 @@ session_start();
 
 
  	$barplot1=new BarPlot($datos);
- 	$barplot1->SetFillGradient("black","#E3CEF6",GRAD_HOR);
+ 	$barplot1->SetFillGradient("orange","blue",GRAD_HOR);
  	$barplot1->SetWidth(80);
 
  	$grafico->Add($barplot1);

@@ -158,6 +158,12 @@
       <strong>El usuario ha sido creado correctamente</strong></label></li>
 		<?PHP
 			}
+      if(isset($_REQUEST['mensaje']) && $_REQUEST['mensaje'] == '3'){
+      ?>
+      <li><label style="margin-top:15px;margin-left:15px;" class="text-danger">
+        <strong>No existe el Usuario y/o error en la Contraseña</strong></label></li>
+      <?PHP
+        }
 		?>
       </ul>
 

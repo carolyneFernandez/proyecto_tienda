@@ -87,7 +87,7 @@ if ($connection->connect_errno) {
 		<?PHP
 			}else{
 		?>
-			<h1>NO EXISTEN ARTÍCULOS EN EL CARRITO</h1>
+			<h1>PEDIDO REALIZADO CORRECTAMENTE,SU CARRITO ESTA VACIO</h1>
 		<?PHP
 			}
 		?>

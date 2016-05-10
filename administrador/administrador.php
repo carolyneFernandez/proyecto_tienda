@@ -49,7 +49,7 @@
               TABLA DE USUARIOS
             </th>
             <th>
-            DESCARGAS<a href="../pdf/usuarios.php" ><span class="glyphicon glyphicon-download-alt"></span></a> 
+            DESCARGAS<a href="../pdf/usuarios.php" ><span class="glyphicon glyphicon-download-alt"></span></a>
             </th>
           </tr>
           <tr class="info" >

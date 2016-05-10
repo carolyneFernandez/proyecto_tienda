@@ -1,6 +1,9 @@
 /*CSS DEL INDEX*/
 /*--HEADER*/
 /*index*/
+#parrafocenter{
+text-align: center;
+}
 #div{
   margin-top:5%;
   margin-left:8%;
@@ -9,37 +12,43 @@
   width:100%;
 }
 #titulo{
-  color:black;
+  color: #0B610B;
   font-family: roboto;
   font-weight: bold;
 }
 .navbar{
   margin-bottom: 0;
 }
+.thumbnail{
+
+    border: 1px solid black;
+}
 #cabeza{
 
       background: #222222 none repeat scroll 0 0;
-      border-bottom: 4px solid blue;
+      border-bottom: 4px solid #64FE2E;
       margin: 0;
       padding: 1% 0;
 }
 #cabeza a{
-  color:blue;
+  color:#64FE2E;
   font-family: roboto;
   font-weight: bold;
 
   text-transform: uppercase;
 }
 .container{
+    color: #0B3B0B;
+      text-align: center;
   width: 100%;
   height: 15%;
   background-color: gray;
-  color:white;
+
 
 }
 /*producto*/
 .nombres{
-  color:#0B0B61;
+  color:#0B610B;
 
 }
 /*-carrusel-*/
@@ -61,7 +70,7 @@
 /*CSS DEL FOOTER*/
 .footer {
     background: #222222 none repeat scroll 0 0;
-    border-top: 4px solid blue;
+    border-top: 4px solid #64FE2E;
     margin: 0;
     padding: 1% 0;
 }
@@ -73,7 +82,7 @@
     width: 100%;
 }
 .footer_dv h4 {
-    color: blue;
+    color: #64FE2E;
     font-family: roboto;
     font-weight: bold;
     margin-bottom: 30px;
@@ -155,4 +164,8 @@ font-weight: bold;
 table{
   color:black;
   margin:3%;
+}
+/*dasboard*/
+#dasboard{
+    margin-left: 5%;
 }

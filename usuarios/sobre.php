@@ -27,7 +27,7 @@ if ($connection->connect_errno) {
       include "../plantilla/temas.php"
       ?>
     </head>
-  
+
   <?php
   include "../plantilla/header.php"
   ?>
@@ -52,6 +52,32 @@ if ($connection->connect_errno) {
   } else {
   ?>
   <div class="container">
+    <div class="col-md-12" id="parrafocenter">
+
+    <h2 style="color:yellow">¿Quienes Somos?</h2>
+    <p>
+      En Moda Carolyne, la mayor tienda online europea, encontrarás una gran selección de ropa, zapatos
+      y accesorios que harán las delicias de las más fashionistas. Cada día tenemos nuevos artículos y una gran
+      cantidad de novedades para que, busques lo que busques, lo encuentres. Como ves, nos encanta la moda y para
+      ello hacemos posible que las nuevas tendencias tengan cabida en nuestro catálogo. Si, por el contrario no te
+      interesan tanto las últimas tendencias y prefieres encontrar ropa, zapatos o complementos a un precio más asequible,
+       en nuestra sección de ofertas los podrás encontrar.
+
+      En Moda Carolyne también disponemos de ropa para cualquier tipo de ocasión. Si quieres ir a una fiesta,
+      disponemos de una gran colección de vestidos de fiesta entre los que elegir. Y no solo eso, si no que si
+      estás buscando vestidos hechos de un material concreto, o para una ocasión especial, disponemos de una guía
+      de vestidos online donde los agrupamos para que te sea más fácil encontrarlos. Descubre también las últimas colecciones
+      tanto para irte de festival, para irte a la playa de vacaciones, o si prefiereres los deportes de invierno, para irte a esquiar.
+
+      Seas como seas y para lo que necesites,Moda Carolyne te ofrece la ayuda perfecta para que encuentres ese jersey, esas
+       zapatillas o esas gafas de sol que estabas buscando. Por ejemplo, si necesitas unos cuantos consejos y saber qué llevar
+       a una entrevista de trabajo, en nuestra tienda online los podrás encontrar, ya necesites un outfit más tradicional,
+       uno más fashionista o uno para trabajar en una start up. Además, si te gusta la moda vaquera o tu estilo es más casual
+       que deportivo o más clásico que trendy, ten por seguro que en Moda Carolyne tenemos la solución a tus problemas.
+
+
+    </p>
+    </div>
 <center>
   <H2>CONOCE NUESTROS PRODUCTOS</H2>
 

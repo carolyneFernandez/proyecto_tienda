@@ -10,36 +10,47 @@
       <link rel="stylesheet" href="css/default.css">
   </head>
   <body>
-    <div class="container" id="insta">
+
+<header style="background: gray;
+
+">
+<img src="imagenes/logotipo/LOGO.png" style="margin-left: 42%;
+    padding: 1%;">
+</header>
+
+		<hr class="colorgraph" style="margin-bottom: 0px;margin-top: 0px;">
+    <div style="padding: 1%;background: #D8D8D8;">
+<H2>ASISTENTE DE INSTALACIÓN</H2>
+    </div>
+    		<hr class="colorgraph" style="margin-bottom: 0px;margin-top: 0px;">
+    <div class="container" style="height: 100%;    padding-bottom: 3%;">
 
     <div class="row">
+      <h4 style="text-align: left;color: black;font-weight: bold;margin-top: 5%;margin-left: 10%;">
+        Configura tu Base de datos Rellenando los siguientes campos
+      </h4>
+      <p style="margin-left: 10%;text-align: left;color: black; margin-top: 5%; width: 55%;">
+        Para usar Moda Carolyne,usted debe crear una base de datos para recolectar todas las actividades relacionadas con informacion de su
+        tienda.
+        Por favor ,rellena estos datos con el fin de que Moda Carolyne pueda conectarse a tu Base de Datos
+      </p>
         <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-
-    			<h2>INSTALACION APLICACION WEB</h2>
-    			<hr class="colorgraph">
     			<div class="row">
             <form method="post">
     				<div class="col-xs-12 col-sm-6 col-md-6">
-    					<div class="form-group">
 
-                <input type="text" name="us" class="form-control input-lg " placeholder="Usuario" tabindex="2" >		</div>
-    				</div>
-    				<div class="col-xs-12 col-sm-6 col-md-6">
-    					<div class="form-group">
-                    <input type="password" name="pw" class="form-control input-lg" placeholder="Contraseña" tabindex="2">
-    					</div>
-    				</div>
-            <div class="col-xs-12 col-sm-6 col-md-6">
-    					<div class="form-group">
-                  <input type="text" name="lc" class="form-control input-lg" placeholder="LOCALHOST" tabindex="2">  					</div>
-    				</div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <div class="form-group">
-                  <input type="text" name="db" class="form-control input-lg" placeholder="NOMBRE_BASE" tabindex="2">  					</div>
+              <label style="margin-top: 19%;margin-left: -184%;">Usuario de la base de datos</label>
+                <input type="text" name="us" class="form-control input-lg " placeholder="Usuario" tabindex="2" style="margin-top: -12%;margin-left: 33%;" >
+              <label  style="margin-left: -177%;margin-top: 19%;">Contraseña de la base de datos  </label>
+                <input type="password" name="pw" class="form-control input-lg" placeholder="Contraseña" style="margin-top: -13%;margin-left: 33%;">
+              <label  style="margin-left: -153%;margin-top: 27%;">Direccion de Servidor de la Base de Datos</label>
+              <input type="text" name="lc" class="form-control input-lg" placeholder="LOCALHOST" style="margin-top: -17%;margin-left: 33%;">
+              <label style="margin-top: 18%;margin-left: -184%;">Nombre de la base de datos</label>
+              <input type="text" name="db" class="form-control input-lg" placeholder="NOMBRE_BASE" style="margin-top: -14%; margin-left: 34%;">
             </div>
-            <label><input type="checkbox" name="terms"> ACEPTA <a href="#">Terminos y Condiciones</a>.</label><br>
-            <input type="submit" value="Sign up" class="btn btn-primary pull-left">
+            <label style="margin-top: 58%;float: left;margin-left: -33%;">
+              <input type="checkbox" name="terms"> ACEPTA <a href="#">Terminos y Condiciones</a>.</label><br>
+            <input type="submit" value="Sign up" class="btn btn-primary pull-left" style="margin-top: 64%;margin-left: -23%;">
 
     			</div>
 

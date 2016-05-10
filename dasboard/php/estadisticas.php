@@ -12,7 +12,8 @@ if ($connection->connect_errno) {
 
 
 
-$consulta="SELECT pro.nombre as nombre,sum(i.cantidad) as cantidad from incluyen i join producto pro on i.codproducto=pro.codproducto group by i.codproducto;";
+$consulta="SELECT pro.nombre as nombre,sum(i.cantidad) as cantidad from
+ incluyen i join producto pro on i.codproducto=pro.codproducto group by i.codproducto;";
 $result=$connection->query($consulta);
 
        while($obj=$result->fetch_object()){
@@ -22,19 +23,18 @@ $result=$connection->query($consulta);
         }
 // Some data
 // Create the Pie Graph.
-$graph = new PieGraph(1065,500);
+$graph = new PieGraph(1300,600);
 $graph->SetShadow();
+//$graph->img->SetTransparent("white");
 
-// Set A title for the plot
-$graph->title->Set("PRODUCTOS MAS VENDIDOS");
-$graph->title->SetFont(FF_FONT1,FS_BOLD);
+
 
 // Create plots
 $size=0.30;
 $p1 = new PiePlot($data);
 $p1->SetLegends($label);
 $p1->SetSize($size);
-$p1->SetCenter(0.50,0.32);
+
 $p1->value->SetFont(FF_FONT0);
 
 $graph->Add($p1);
