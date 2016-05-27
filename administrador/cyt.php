@@ -42,7 +42,7 @@
     <div class="container" id="divcolores">
 
               <!-- pintamos la cabecera de la tabla -->
-              <table style="border:1px solid black" class="table table-bordered table-hover table-condensed">
+              <table style="background: azure;border:1px solid black;width: 85%;margin-left: 10%;padding: 1px;" class="table table-bordered table-hover table-condensed">
               <thead>
                 <tr >
                   <th class="info"  colspan="2">
@@ -88,7 +88,7 @@ if ($result = $connection->query("SELECT * FROM producto where categoria='blusas
 
 
       <!-- PRINT THE TABLE AND THE HEADER -->
-      <table style="border:1px solid black" class="table  table-bordered table-hover table-condensed">
+      <table style="background: azure;border:1px solid black;width: 85%;margin-left: 10%;padding: 1px;" class="table  table-bordered table-hover table-condensed">
       <thead>
         <tr >
           <th class="info"  colspan="2">
@@ -130,7 +130,7 @@ if ($result = $connection->query("SELECT * FROM producto where categoria='pantal
 
 
       <!-- PRINT THE TABLE AND THE HEADER -->
-      <table style="border:1px solid black" class="table table-bordered table-hover table-condensed">
+      <table style="background: azure;border:1px solid black;width: 85%;margin-left: 10%;padding: 1px;" class="table table-bordered table-hover table-condensed">
       <thead>
         <tr >
           <th class="info"  colspan="2">
@@ -170,7 +170,7 @@ if ($result = $connection->query("SELECT * FROM producto where categoria='pantal
 
 
         <!-- PRINT THE TABLE AND THE HEADER -->
-        <table style="border:1px solid black" class="table  table-bordered table-hover table-condensed">
+        <table style="background: azure;border:1px solid black;width: 85%;margin-left: 10%;padding: 1px;" class="table  table-bordered table-hover table-condensed">
         <thead>
           <tr >
             <th class="info"  colspan="2">
@@ -211,7 +211,7 @@ if ($result = $connection->query("SELECT * FROM producto where categoria='pantal
 
 
           <!-- PRINT THE TABLE AND THE HEADER -->
-          <table style="border:1px solid black" class="table  table-bordered table-hover table-condensed">
+          <table style="background: azure;border:1px solid black;width: 85%;margin-left: 10%;padding: 1px;" class="table  table-bordered table-hover table-condensed">
           <thead>
             <tr >
               <th class="info"  colspan="2">
@@ -251,7 +251,7 @@ echo "</table>";
 
 
             <!-- PRINT THE TABLE AND THE HEADER -->
-            <table style="border:1px solid black" class="table table-bordered table-hover table-condensed">
+            <table style="background: azure;border:1px solid black;width: 85%;margin-left: 10%;padding: 1px;" class="table table-bordered table-hover table-condensed">
             <thead>
               <tr >
                 <th class="info"  colspan="2">

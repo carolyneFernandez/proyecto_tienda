@@ -44,7 +44,7 @@ u.codusuario=p.codusuario join incluyen i on p.codpedido=i.codpedido join produc
 
 
           <!-- PRINT THE TABLE AND THE HEADER -->
-          <table style="border:1px solid black" class="table  table-bordered table-hover table-condensed">
+          <table style="WIDTH: 95%;BACKGROUND: aliceblue;border:1px solid black;" class="table  table-bordered table-hover table-condensed">
           <thead>
             <tr class="info" >
               <th colspan="5">

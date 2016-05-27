@@ -55,7 +55,7 @@ $consulta=("SELECT * from producto where  categoria='sudaderas' and sexo='mujer'
  } else {
    ?>
     <div class="container">
-  <h2>TODAS LAS CHAQUETAS DE MODA</h2>
+  <h2>TODAS LAS SUDADERAS DE MODA</h2>
   <p>Espectaculares y a precios de oferta:</p>
 
   <div class="row">

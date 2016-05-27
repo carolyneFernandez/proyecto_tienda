@@ -34,26 +34,49 @@ if ($connection->connect_errno) {
 <?php
   include "../plantilla/header.php"
 ?>
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+  
 
-<center>
-
-  <h2>Nuestros Productos</h2>
-  <p>
-    Una estadistica de nuestros productos para que tenga la informacion mas reciente de nuestra tienda
-  </p></center>
-  <img src="../dasboard/php/estadisticas.php" />
-
-  <hr style="border: 1px solid black;">
-
+  <div class="panel-group" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+  <div class="panel-heading" role="tab"  id="header">
+  <h4 class="pannel-title"><center>
+  TUS PEDIDOS
+  </center></h4><p>
     <center>
 
-      <h2>Tus Pedidos</h2>
-      <p>
-        Echale un vistazo  a tus pedidos en nuestra Tienda Online
-      </p></center>
+    Echale un vistazo  a tus pedidos en nuestra Tienda Online </center>
+  </p>
+  </div>
+  <div class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" aria-expanded="true">
+  <div class="panel-body">
+  <center>
+    <img src="../dasboard/php/estausu.php" id="dasboard"/></center>
+  </div>
+  </div>
+  </div>
 
-  <img src="../dasboard/php/estausu.php" id="dasboard"/>
+    </div>
 
+<div class="panel panel-default">
+<div class="panel-heading" role="tab"  id="header">
+<h4 class="pannel-title"><center>
+NUESTROS PRODUCTOS
+</center></h4><p>
+  <center>
+
+Una estadistica de nuestros productos para que tenga la informacion mas reciente de nuestra tienda  </center>
+</p>
+</div>
+<div class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" aria-expanded="true">
+<div class="panel-body">
+<center>
+<img src="../dasboard/php/estadisticas.php" /></center>
+</div>
+</div>
+</div>
+
+  </div>
 <?php
 
   include "../plantilla/foot.php"

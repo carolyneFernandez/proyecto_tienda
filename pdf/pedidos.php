@@ -22,7 +22,7 @@ $pdf->Ln(15);
 $pdf->SetFont('Courier', 'B', 20);
 $pdf->Cell(50, 0, '', 0);
 $pdf->SetTextColor(44, 212, 204);
-$pdf->Cell(85, 25, 'LISTADO DE USUARIOS', 0);
+$pdf->Cell(0, 25, 'LISTADO DE LOS PEDIDOS', 0);
 $pdf->SetMargins(25, 30, 10, true);
 $pdf->Ln(23);
 $pdf->SetTextColor(0,0,0);
@@ -55,7 +55,7 @@ while($obj = $usuarios->fetch_object()){
 	$pdf->Cell(40, 8,$obj->direccion, 1,0,"C",'True');
 	$pdf->Cell(15, 8, $obj->cantidad, 1,0,"C",'True');
 	$pdf->Cell(15, 8, $obj->precio, 1,0,"C",'True');
-  $pdf->Cell(30, 8, $obj->cantidad*$obj->preciod, 1,0,"C",'True');
+  $pdf->Cell(30, 8, $obj->cantidad*$obj->precio, 1,0,"C",'True');
 
 	$pdf->Ln(8);
 }

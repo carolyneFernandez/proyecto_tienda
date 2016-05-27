@@ -1,5 +1,14 @@
 /*CSS DEL INDEX*/
 /*--HEADER*/
+
+#header{
+background-color: #FA5858;
+}
+#imagepro{
+
+    border: 1px solid black;
+
+}
 /*index*/
 #parrafocenter {
   text-align: center;
@@ -179,3 +188,19 @@ table{
 #dasboard{
     margin-left: 5%;
 }
+/*TEMAS*/
+.zoom{
+        /* Aumentamos la anchura y altura durante 2 segundos */
+        transition: width 2s, height 2s, transform 2s;
+        -moz-transition: width 2s, height 2s, -moz-transform 2s;
+        -webkit-transition: width 2s, height 5s, -webkit-transform 2s;
+        -o-transition: width 2s, height 2s,-o-transform 2s;
+    }
+    .zoom:hover{
+        /* tranformamos el elemento al pasar el mouse por encima al doble de
+           su tamaño con scale(2). */
+        transform : scale(5);
+        -moz-transform : scale(2);      /* Firefox */
+        -webkit-transform : scale(2);   /* Chrome - Safari */
+        -o-transform : scale(2);        /* Opera */
+    }

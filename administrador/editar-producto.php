@@ -5,13 +5,13 @@
     include "../plantilla/sesionadmin.php"
 ?>
 <!DOCTYPE html>
-<html>
+<html style="background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRF9qi4WRoBLE0OhgMbzmCgBtJ-oQRTWchhUCn3R3UObvm0BcRsTA');">
   <head>
     <meta charset="utf-8">
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="../css/administrador.css">
+        <link rel="stylesheet" href="../css/default.css">
 
     <title></title>
 </head>
@@ -21,8 +21,16 @@
     ?>
 
 <body>
-       <h3>EDITAR PRODUCTO</h3>
- <div id="center" class="container">
+  <div class="panel-heading" role="tab"  id="header" style="
+    background: lightgray;
+    border: 1px solid;
+">
+    <h4 class="pannel-title"><center>
+      EDITAR PRODUCTO
+    </center></h4>
+  </div>
+
+
 
    <?php
 
@@ -43,11 +51,14 @@
 
     $result=$connection->query($consulta);
     $obj = $result->fetch_object();
+    ?>
+    <div style="margin-left: 5%;width: 50%;float: left;">
+    <?php
     echo "<form method='post' action='#'>";
     echo  "<input type='hidden' name='codproducto'  value='$obj->codproducto' class='form-control'>";
     echo  "<input type='hidden' name='coddistribuidor'  value='$obj->coddistribuidor' class='form-control'>";
-    echo " <label>Nombre del Producto:</label><br>";
-    echo "<input type='text' name='nombre'  value='$obj->nombre' class='form-control'>";
+    echo " <label style='margin-top: 3%;'>Nombre del Producto:</label><br>";
+    echo "<input type='text' name='nombre'  value='$obj->nombre' class='form-control' style='width: 70%;'>";
 
 
 
@@ -56,29 +67,36 @@
        $result1=$connection->query($consulta1);
 
 
-     echo " <label>Nombre del  Distribuidor:</label>";
+     echo " <label style='margin-right: 1%;margin-top: 2%;'>Nombre del  Distribuidor:</label>";
    echo "<select  name='coddistribuidor'>";
  while( $obj1 = $result1->fetch_object()){
    echo "<option value='$obj1->coddistribuidor'>$obj1->nombre</option>";
  }
  echo "</select><br>";
 
-    echo " <label>Descripcion:</label> <br>";
+    echo " <label style='margin-top: 2%;'>Descripcion:</label> <br>";
     echo "<textarea name='descripcion' style='width: 500px; height: 150px;' >$obj->descripcion</textarea> <br>";
 
-    echo " <label>Stock:</label>";
-    echo  "<input type='numer' name='stock'  value='$obj->stock' class='form-control'>";
-    echo " <label>Foto:</label>";
-    echo  "<input type='text' name='foto'  value='$obj->foto' class='form-control'>";
-    echo " <label>Categoria:</label>";
-    echo  "<input type='text' name='categoria'  value='$obj->categoria' class='form-control'>";
-    echo " <label>Precio:</label>";
-    echo  "<input type='text' name='precio'  value='$obj->precio' class='form-control'>";
-    echo " <label>Sexo:</label>";
-    echo  "<input type='text' name='sexo'  value='$obj->sexo' class='form-control'>";
+    echo " <label style='margin-top: 2%;'> Stock:</label>";
+    echo  "<input type='numer' name='stock'  value='$obj->stock' class='form-control' style='width: 23%;'>";
+echo "</div>";
+  ?>
+    <div style="background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRF9qi4WRoBLE0OhgMbzmCgBtJ-oQRTWchhUCn3R3UObvm0BcRsTA');">
+<?php
+
+    echo " <label style='margin-top: 2%;'>Categoria:</label>";
+    echo  "<input type='text' name='categoria'  value='$obj->categoria' class='form-control' style='width: 23%;'>";
+    echo " <label style='margin-top: 2%;'>Precio:</label>";
+    echo  "<input type='text' name='precio'  value='$obj->precio' class='form-control' style='width: 23%;'>";
+    echo " <label style='margin-top: 2%;'>Sexo:</label>";
+    echo  "<input type='text' name='sexo'  value='$obj->sexo' class='form-control' style='margin-bottom: 1%;width: 23%;'>";
 
     echo "<input type='submit' name='envia' class='btn btn-success' value='Enviar'>";
-    echo "</form>";
+  echo "</form>";
+      echo "<a href='producto.php'><input type='submit'  class='btn btn-info' value='ATRAS' style='margin-left: 9%;'></a>";
+  echo "</div>";
+
+
 }else{
 //creamos las variables
 $codproducto=$_POST['codproducto'];
@@ -92,11 +110,12 @@ $precio=$_POST['precio'];
 $sexo=$_POST['sexo'];
 //actualizamos los datos con los introducidos
 $consulta_mysql2="UPDATE producto SET coddistribuidor='".$coddistribuidor."',nombre='".$nombre."',
-descripcion='".$descripcion."',stock='".$stock."',foto='".$foto."',
+descripcion='".$descripcion."',stock='".$stock."',
 categoria='".$categoria."',precio='".$precio."',sexo='".$sexo."' WHERE codproducto=$codproducto;";
 
         if($connection->query($consulta_mysql2)==true){
-          header('Location:producto.php');
+          $codproducto=$_POST['codproducto'];
+          header("Location:editar-producto.php?id=$codproducto");
 
         }else{
             echo $connection->error;

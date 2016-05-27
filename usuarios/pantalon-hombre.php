@@ -22,7 +22,7 @@ if ($connection->connect_errno) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    
+
       <?php
       include "../plantilla/temas.php"
       ?>
@@ -56,7 +56,7 @@ $consulta=("SELECT * from producto where  categoria='pantalones' and sexo='hombr
  } else {
    ?>
     <div class="container">
-  <h2>TODAS LAS CHAQUETAS DE MODA</h2>
+  <h2>TODAS LOS PANTALONES DE MODA</h2>
   <p>Espectaculares y a precios de oferta:</p>
 
   <div class="row">

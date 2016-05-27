@@ -12,20 +12,29 @@ if(isset($_SESSION["nombre"])){
 ?>
 
 <!DOCTYPE html>
-<html lang="">
+<html style="background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRF9qi4WRoBLE0OhgMbzmCgBtJ-oQRTWchhUCn3R3UObvm0BcRsTA');">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Distribuidor</title>
-    <link rel="stylesheet" href="editar.css">
+
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/default.css">
 
-</head>
+  </head>
 
-<body>
-       <h3>EDITAR DISTRIBUIDOR</h3>
+  <body>
+  <?php
+      include "../plantilla/cabeceradmin.php"
+  ?>
+  <div class="panel-heading" role="tab"  id="header">
+    <h4 class="pannel-title"><center>
+  EDITAR DISTRIBUIDOR
+    </center></h4>
+  </div>
+	<hr class="colorgraph" style="margin-bottom: 0px;margin-top: 0px;">
  <div id="center" class="container">
 
    <?php
@@ -45,20 +54,21 @@ if(isset($_SESSION["nombre"])){
 
     $result=$connection->query($consulta);
     $obj = $result->fetch_object();
-    echo "<form method='post' action='#'>";
+    echo "<form method='post' action='#' style='width: 20%;margin-bottom: 4%;padding: 1%;margin-top: 2%;margin-left: 40%;'>";
 
     echo "<input type='hidden' name='coddistribuidor' value='$obj->coddistribuidor'><br> ";
     echo " <label>Nombre del Distribuidor:</label><br>";
-    echo "<input type='text' name='nombre'  value='$obj->nombre' class='form-control'>";
+    echo "<input type='text' name='nombre'  value='$obj->nombre' class='form-control'  >";
     echo " <label>Localidad:</label>";
-    echo  "<input type='text' name='localidad'  value='$obj->localidad' class='form-control'>";
+    echo  "<input type='text' name='localidad'  value='$obj->localidad' class='form-control' >";
     echo " <label>Provincia:</label>";
     echo  "<input type='text' name='provincia'  value='$obj->provincia' class='form-control'>";
     echo " <label>CIF:</label>";
-    echo  "<input type='text' name='cif'  value='$obj->cif' class='form-control'>";
+    echo  "<input type='text' name='cif'  value='$obj->cif' class='form-control' >";
 
     echo "<input type='submit' name='envia' class='btn btn-success' value='Enviar'>";
     echo "</form>";
+
 }else{
 $coddistribuidor=$_POST['coddistribuidor'];
 $nombre=$_POST['nombre'];
@@ -72,7 +82,8 @@ localidad='".$localidad."',provincia='".$provincia."',cif='".$cif."' WHERE coddi
 
 
         if($connection->query($consulta_mysql2)==true){
-          header('Location:distribuidor.php');
+          $coddistribuidor=$_POST['coddistribuidor'];
+          header("Location:editardistribuidor.php?id=$coddistribuidor");
 
         }else{
             echo $connection->error;
@@ -84,5 +95,8 @@ localidad='".$localidad."',provincia='".$provincia."',cif='".$cif."' WHERE coddi
 ?>
 
 </div>
+<?php
+    include "../plantilla/foot.php"
+?>
 </body>
 </html>

@@ -21,11 +21,12 @@
       <?php
         include_once("../plantilla/cabeceradmin.php");
       ?> <div id="center" class="container">
-        <center>
-          <b><h3>Añadir Distribuidor</h3></b>
-
-        </center>
-
+        <div class="panel-heading" role="tab"  id="header">
+          <h4 class="pannel-title"><center>
+      AÑADIR DISTRIBUIDOR
+          </center></h4>
+        </div>
+      	<hr class="colorgraph" style="margin-bottom: 0px;margin-top: 0px;">
 
        <?php
         //creamos la coneccion a la base de datos
@@ -44,16 +45,16 @@
 
          $consulta="SELECT * FROM coddistribuidor";
              $result=$connection->query($consulta);
-             echo "<form method='post' action='#' enctype='multipart/form-data'>";
+             echo "<form method='post' action='#' enctype='multipart/form-data' style='width: 20%;margin-bottom: 4%;padding: 1%;margin-top: 2%;margin-left: 40%;'>";
           echo "<input type='hidden'name='coddistribuidor'> ";
             echo " <label>Nombre del distribuidor:</label>";
-            echo "<input type='text' name='nombre'  class='form-control'>";
+            echo "<input type='text' name='nombre'  class='form-control' required>";
             echo " <label>Localidad:</label>";
-          echo "<input type='text' name='localidad'  class='form-control'>";
+          echo "<input type='text' name='localidad'  class='form-control' required>";
           echo " <label>Provincia : </label><br>";
-          echo "<input type='text' name='provincia'  class='form-control'>";
+          echo "<input type='text' name='provincia'  class='form-control' required>";
           echo " <label>CIF:</label>";
-          echo  "<input type='text' name='cif'  class='form-control'>";
+          echo  "<input type='number' name='cif'  class='form-control' required>";
           echo "<input type='submit' name='envia' class='btn btn-success' value='Enviar'>";
           echo "</form>";
     }else{

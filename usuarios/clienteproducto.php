@@ -21,7 +21,7 @@ if ($connection->connect_errno) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    
+
     <?php
     include "../plantilla/temas.php"
     ?>
@@ -53,19 +53,19 @@ if ($connection->connect_errno) {
     </p>";
     }else{
     ?>
-    <div class="container" id='contenido'>
+    <div style="height: 434px;">
       <?php
       $result=$connection->query($consulta);
       $obj = $result->fetch_object();
   echo "<div class='col-md-6' >";
-    echo "<img src='../imagenes/".$obj->foto."' class='img-rounded' width='304' height='236'>";
+    echo "<img src='../imagenes/".$obj->foto."' class='img-rounded' width='600' height='400''>";
       echo "</div>";
     ?>
 
 
   <div class='col-md-6'>
 
-    <form action="../plantilla/addCarrito.php" method="POST">
+    <form action="../plantilla/addCarrito.php" method="POST" style=" margin-top: 8%;">
     <input type="hidden" name="id_producto" value="<?PHP echo $obj->codproducto; ?>">
     <input type="hidden" name="nombre_producto" value="<?PHP echo $obj->nombre; ?>">
     <input type="hidden" name="precio_producto" value="<?PHP echo $obj->precio; ?>">

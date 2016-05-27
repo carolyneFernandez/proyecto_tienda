@@ -49,11 +49,12 @@ session_start();
 
       <ul class="nav nav-tabs">
   <li class="active"><a data-toggle="tab" href="#home">DATOS PERSONALES</a></li>
-  <?php
-  if($_SESSION["administrador"]!="0"){?>
+
   <li><a data-toggle="tab" href="#menu1">PEDIDOS</a></li>
 
-<?php  }?>
+
+
+
 <?php
 if($_SESSION["administrador"]!="0"){?>
   <li><a data-toggle="tab" href="#menu2">TEMAS</a></li>
@@ -63,12 +64,12 @@ if($_SESSION["administrador"]!="0"){?>
 <div class="tab-content">
   <div id="home" class="tab-pane fade in active">
 
-    <div class="container well " style="
-    margin-bottom: 0px;">
+    <div  style="
+    height: 360px;
+    margin-bottom: 0px;
+    ">
 
-      <div class="row">
-          <div class="col-xs-12"><h2>Tu Perfil de Usuario</h2></div>
-        </div>
+
       <br /><br />
       <?php
     $consulta=("SELECT * FROM usuarios where Nombre='".$_SESSION['nombre']."' ");
@@ -79,74 +80,88 @@ if($_SESSION["administrador"]!="0"){?>
 $obj = $result->fetch_object();
     ?>
   <form  action="modificardatos.php" class="form-horizontal " method="POST">
+    <div class="col-md-12">
+<div class="col-md-6">
+
 
       <div class="form-group">
-            <label class="col-sm-2 control-label" for="formGroup">Nombre del Usuario
+            <label class="col-sm-4 control-label" for="formGroup">Nombre del Usuario
               </label>
-            <div class="col-sm-2">
+            <div class="input-group col-sm-4">
                 <input class="form-control" name="id" type="hidden"  value=<?php echo $obj->codusuario;?> >
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
               <input class="form-control" type="text" name="nombre" value=<?php echo $obj->Nombre;?> disabled>
             </div>
           </div>
 
         <div class="form-group">
-            <label class="col-sm-2 control-label" for="formGroup">Nombre</label>
-            <div class="col-sm-4">
+            <label class="col-sm-4 control-label" for="formGroup">Nombre</label>
+            <div class="input-group col-sm-4">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
               <input  class="form-control" type="text" name="nombre" value=<?php echo $obj->Nombre;?>>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="col-sm-2 control-label" for="formGroup">Apellidos</label>
-            <div class="col-sm-4">
+            <label class="col-sm-4 control-label" for="formGroup">Apellidos</label>
+            <div class="input-group col-sm-4">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
               <input class="form-control" type="text"  name="apellido" value="<?php echo $obj->apellido?>">
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 control-label" for="formGroup">DNI</label>
-            <div class="col-sm-4">
+            <label class="col-sm-4 control-label" for="formGroup">DNI</label>
+            <div class="input-group col-sm-4">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
               <input class="form-control" type="text"  name="dni" value="<?php echo $obj->dni?>">
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 control-label" for="formGroup">Provincia</label>
-            <div class="col-sm-4">
+            <label class="col-sm-4 control-label" for="formGroup">Provincia</label>
+            <div class="input-group col-sm-4">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
               <input class="form-control" type="text"  name="provincia" value="<?php echo $obj->provincia?>">
             </div>
           </div>
+</div>
+<div class="col-md-6">
+
 
           <div class="form-group">
-            <label class="col-sm-2 control-label" id="tel"  name="telefono">Teléfono</label>
+            <label class="col-sm-4 control-label" for="formGroup"  >Teléfono</label>
 
-            <div class="input-group col-sm-3">
+            <div class="input-group col-sm-4">
               <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
               <input class="form-control" type="number"  name="telefono" value=<?php echo $obj->telefono;?>>
 
             </div>
           </div>
           <div class="form-group">
-              <label class="col-sm-2 control-label" for="formGroup ">Direccion</label>
-              <div class="col-sm-4">
+              <label class="col-sm-4 control-label" for="formGroup ">Direccion</label>
+                <div class="input-group col-sm-4">
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
                 <input class="form-control" type="text"  name="direccion" value="<?php echo $obj->direccion;?>">
 
               </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="formGroup">Localidad</label>
-                <div class="col-sm-4">
+                <label class="col-sm-4 control-label" for="formGroup">Localidad</label>
+                  <div class="input-group col-sm-4">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
                   <input class="form-control" type="text"   name="localidad" value=<?php echo $obj->localidad;?>>
                 </div>
               </div>
               <div class="form-group">
-                  <label class="col-sm-2 control-label" for="formGroup">Pais</label>
-                  <div class="col-sm-4">
+                  <label class="col-sm-4 control-label" for="formGroup">Pais</label>
+                  <div class="input-group col-sm-4">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
                     <input class="form-control" type="text" name="pais" value=<?php echo $obj->pais?>>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label class="col-sm-2 control-label" for="formGroup"></label>
-                  <div class="col-sm-4">
+                  <label class="col-sm-4 control-label" for="formGroup"></label>
+                  <div class="input-group col-sm-4">
 
                 <button type="submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-floppy-saved"></span> Guardar</button>
 
@@ -157,8 +172,8 @@ $obj = $result->fetch_object();
 
           </div>
 
-
-
+</div>
+</div>
   </form>
   <?php
 }?>
@@ -188,7 +203,7 @@ where u.Nombre='".$_SESSION['nombre']."'")){
 
 ?>
 
-<div class="container well " style="
+<div style="
 margin-bottom: 0px;">
 
 
@@ -256,9 +271,18 @@ margin-bottom: 0px;">
         <div class="container well " style="
         margin-bottom: 0px;">
 
-      <div class="row">
-          <div><h2>ELIGE EL TEMA</h2></div>
-        </div>
+        <div class="panel-group" role="tablist" aria-multiselectable="true">
+          <div class="panel-group" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+          <div class="panel-heading" role="tab"  id="header">
+          <h4 class="pannel-title"><center>
+          ELIGE UN TEMA
+          </center></h4><p>
+            <center>
+
+            Echale un vistazo  a tus pedidos en nuestra Tienda Online </center>
+          </p>
+          </div>
         <?php
         //CREATING THE CONNECTION
        $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
@@ -285,13 +309,14 @@ margin-bottom: 0px;">
             <form>
                 <input class="form-control" name="id" type="hidden"  value=<?php echo $obj->codusuario;?> >
               <div style="display: inline;margin: 5%;">
-                  <input type="radio" name="procesar" value="0" > <img src="../imagenes/plantillas/default.png" height="142" width="142">
+                  <input type="radio" name="procesar" value="0" > <img class="zoom"  src="../imagenes/plantillas/default.png" height="142" width="142">
               </div>
               <div  style="margin: 9%;display: inline;">
-                      <input type="radio" name="procesar" value="1"><img src="../imagenes/plantillas/plantilla1.png" height="142" width="142">
+                      <input type="radio" name="procesar" value="1"><img class="zoom" src="../imagenes/plantillas/plantilla1.png" height="142" width="142">
               </div>
               <div style="margin-left: 3%;display: inline;">
-                <input type="radio" name="procesar" value="2"><img src="../imagenes/plantillas/plantilla2.png" height="142" width="142">
+                <input type="radio" name="procesar" value="2"><img class="zoom"  src="../imagenes/plantillas/plantilla2.png" height="142" width="142">
+
               </div>
 
 
@@ -309,6 +334,9 @@ margin-bottom: 0px;">
 </div>
   </div>
 </div>
+</div>
+</div>
+
 <?php
 include "../plantilla/foot.php"
 ?>

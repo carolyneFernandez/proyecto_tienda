@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Usuario</title>
 
@@ -35,6 +35,7 @@
        exit();
 
    }
+
    //si no esta definida el input typo sumbit con el nombre envia
    //que me muestre el formulario
    if(!isset($_POST['envia'])){
@@ -46,30 +47,128 @@
 
     $result=$connection->query($consulta);
     $obj = $result->fetch_object();
-    echo " <center>
-        <h3><b>Edita los datos de $obj->Nombre</b></h3>
-     </center>";
-    echo "<form method='post' action='#'>";
-    echo " <label>Nombre :</label>";
-    echo  "<input type='text' name='nombre'  value='$obj->Nombre' class='form-control' >";
-    echo "<input type='hidden'name='id' value='$obj->codusuario'> ";
-    echo " <label>Apellido:</label>";
-    echo "<input type='text' name='apellido'  value='$obj->apellido' class='form-control'>";
-    echo " <label>DNI:</label>";
-    echo  "<input type='text' name='dni'  value='$obj->dni' class='form-control'>";
-    echo " <label>Localidad:</label>";
-    echo  "<input type='text' name='localidad'  value='$obj->localidad' class='form-control'>";
-    echo " <label>Provincia:</label>";
-    echo  "<input type='text' name='provincia'  value='$obj->provincia' class='form-control'>";
-    echo " <label>Pais:</label>";
-    echo  "<input type='text' name='pais'  value='$obj->pais' class='form-control'>";
-    echo " <label>Direccion:</label>";
-    echo  "<input type='text' name='direccion'  value='$obj->direccion' class='form-control'>";
-    echo " <label>Telefono:</label>";
-    echo  "<input type='number' name='telefono'  value='$obj->telefono' class='form-control'>";
 
-    echo "<input type='submit' name='envia' class='btn btn-success' value='Enviar'>";
-    echo "</form>";
+    echo "<form method='post' action='#'>";
+    ?>
+    <div class="panel-group" role="tablist" aria-multiselectable="true" style="height: 430px;margin-top: 5%;">
+<div class="panel panel-default">
+<div class="panel-heading" role="tab"  id="header">
+  <?php
+  echo "<h4 class='pannel-title' style='text-transform: uppercase'>";
+
+  echo "<center>
+
+<b>EDITAR LOS DATOS PERSONALES DE $obj->Nombre</b>  </center>";
+
+echo "</h4>";
+  ?>
+</div>
+<div class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" aria-expanded="true" >
+<div class="panel-body">
+  <div class="col-md-12">
+
+<div class="col-md-6">
+
+
+    <div class="form-group">
+          <label class="col-sm-4 control-label" for="formGroup">Nombre del Usuario
+            </label>
+          <div class="input-group col-sm-4">
+              <input class="form-control" name="id" type="hidden"  value=<?php echo $obj->codusuario;?> >
+                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+            <input class="form-control" type="text" name="nombre" value=<?php echo $obj->Nombre;?> disabled>
+          </div>
+        </div>
+        <div class="form-group">
+              <label class="col-sm-4 control-label" for="formGroup">Nombre del Usuario
+                </label>
+              <div class="input-group col-sm-4">
+
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input  class="form-control" type="text" name="nombre" value=<?php echo $obj->Nombre;?>>
+              </div>
+            </div>
+
+
+        <div class="form-group">
+          <label class="col-sm-4 control-label" for="formGroup">Apellidos</label>
+          <div class="input-group col-sm-4">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+            <input class="form-control" type="text"  name="apellido" value="<?php echo $obj->apellido?>">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-4 control-label" for="formGroup">DNI</label>
+          <div class="input-group col-sm-4">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+            <input class="form-control" type="text"  name="dni" value="<?php echo $obj->dni?>">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-4 control-label" for="formGroup">Provincia</label>
+          <div class="input-group col-sm-4">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
+            <input class="form-control" type="text"  name="provincia" value="<?php echo $obj->provincia?>">
+          </div>
+        </div>
+</div>
+<div class="col-md-6">
+
+
+        <div class="form-group">
+          <label class="col-sm-4 control-label" for="formGroup"  >Telefono</label>
+
+          <div class="input-group col-sm-4">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
+            <input class="form-control" type="number"  name="telefono" value=<?php echo $obj->telefono;?>>
+
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label" for="formGroup ">Direccion</label>
+              <div class="input-group col-sm-4">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
+              <input class="form-control" type="text"  name="direccion" value="<?php echo $obj->direccion;?>">
+
+            </div>
+          </div>
+          <div class="form-group">
+              <label class="col-sm-4 control-label" for="formGroup">Localidad</label>
+                <div class="input-group col-sm-4">
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
+                <input class="form-control" type="text"   name="localidad" value=<?php echo $obj->localidad;?>>
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label" for="formGroup">Pais</label>
+                <div class="input-group col-sm-4">
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
+                  <input class="form-control" type="text" name="pais" value=<?php echo $obj->pais?>>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-4 control-label" for="formGroup"></label>
+                <div class="input-group col-sm-4">
+
+            <input type='submit' name='envia' class='btn btn-success' value='GUARDAR'>
+
+
+                </div>
+              </div>
+
+        </div>
+
+</div>
+</form>
+</div>
+</div>
+</div>
+
+      </div>
+
+    <?php
+
 }else{
 $id=$_POST['id'];
 
@@ -92,7 +191,8 @@ pais='".$pais."',direccion='".$direccion."',telefono='".$telefono."' WHERE codus
 
 
         if($connection->query($consulta_mysql2)==true){
-          header('Location:administrador.php');
+          $id=$_POST['id'];
+          header("Location:editar-usu.php?id=$id");
 
         }else{
             echo $connection->error;

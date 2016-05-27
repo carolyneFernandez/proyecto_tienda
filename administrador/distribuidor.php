@@ -42,12 +42,12 @@
 
 
           <!-- Pintar la cabecera de la tabla -->
-          <table style="border:1px solid black" class="table table-striped table-bordered table-hover table-condensed">
+          <table style="BACKGROUND: azure;border:1px solid black;WIDTH: 96%;" class="table table-striped table-bordered table-hover table-condensed">
           <thead>
             <tr class="info" >
               <th colspan="5">
                 <CENTER>
-                  TABLA DE DISTRIDORES
+                  TABLA DE DISTRIBUIDORES
                 </CENTER>
               </th>
               <th colspan="2">
@@ -92,7 +92,7 @@
 
     ?>
   </table>
-  <a href="agregadistribuidor.php"><button type='button' class='btn btn-success'>Añadir distribuidor</button></a>
+  <a href="agregadistribuidor.php"><button type='button' class='btn btn-success' style='FLOAT: RIGHT;MARGIN-BOTTOM: 6%;'>Añadir distribuidor</button></a>
 
     </div>
     <?php

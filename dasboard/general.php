@@ -21,7 +21,7 @@
           include "cabeceradmin.php"
       ?>
       <center>
-        <h1>CANTIDAD DE ROPA POR CATEGORIA</h1>
+        <h1>DATOS GENERALES</h1>
           <img src="./php/general.php" />
       </center>
 

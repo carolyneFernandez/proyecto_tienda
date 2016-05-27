@@ -13,7 +13,7 @@ $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial', '', 10);
 $pdf->Image('../imagenes/logotipo/LOGO.png' , 10 ,10, 20 , 15,'PNG');
-
+$pdf->SetMargins(30, 30 , 30);
 $pdf->Cell(30, 10, '', 10);
 $pdf->Cell(1080, 30, '', 0);
 $pdf->SetFont('Arial', 'I', 9);
@@ -22,7 +22,7 @@ $pdf->Ln(15);
 $pdf->SetFont('Courier', 'B', 20);
 $pdf->Cell(50, 0, '', 0);
 $pdf->SetTextColor(44, 212, 204);
-$pdf->Cell(100, 25, 'LISTADO DE PRODUCTOS', 0);
+$pdf->Cell(85, 25, 'LISTADO DE PRODUCTOS', 0);
 $pdf->Ln(23);
 $pdf->SetTextColor(0,0,0);
 $pdf->SetFillColor(44, 212, 204);//color de la cabecera de la tabla
@@ -54,7 +54,7 @@ while($obj = $consulta->fetch_object()){
 	$pdf->Cell(20, 8, $obj->stock, 1,0,"C",'True');
   $pdf->Cell(25, 8, $obj->categoria, 1,0,"C",'True');
   $pdf->Cell(25, 8,$obj->precio, 1,0,"C",'True');
-	  $pdf->Cell(20, 8,$obj->categoria, 1,0,"C",'True');
+	  $pdf->Cell(20, 8,$obj->sexo, 1,0,"C",'True');
 	$pdf->Ln(8);
 }
 $pdf->SetFont('Arial', 'B', 8);

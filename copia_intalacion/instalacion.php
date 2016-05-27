@@ -9,11 +9,12 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <link rel="stylesheet" href="css/default.css">
   </head>
-  <body>
+  <sytle>
 
-<header style="background: gray;
+  </sytle>
+  <body style="background-image:url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRF9qi4WRoBLE0OhgMbzmCgBtJ-oQRTWchhUCn3R3UObvm0BcRsTA');">
 
-">
+<header>
 <img src="imagenes/logotipo/LOGO.png" style="margin-left: 42%;
     padding: 1%;">
 </header>
@@ -23,7 +24,7 @@
 <H2>ASISTENTE DE INSTALACIÓN</H2>
     </div>
     		<hr class="colorgraph" style="margin-bottom: 0px;margin-top: 0px;">
-    <div class="container" style="height: 100%;    padding-bottom: 3%;">
+    <div  style="height: 100%;    padding-bottom: 3%;" id="contenido">
 
     <div class="row">
       <h4 style="text-align: left;color: black;font-weight: bold;margin-top: 5%;margin-left: 10%;">

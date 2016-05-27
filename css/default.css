@@ -1,4 +1,23 @@
 /*CSS DEL INDEX*/
+/*sobre*/
+#header{
+background-color: #F2F5A9;
+}
+#imagepro{
+
+    border: 1px solid black;
+
+}
+#contenido{
+  color: #D7DF01;
+text-align: center;
+width: 100%;
+height: 78%;
+
+}
+.radi{
+  margin:1%;
+}
 /*--HEADER*/
 
 #titulo{
@@ -34,10 +53,10 @@
 
 .container{
   color:#D7DF01;
-  text-align: center;
+
   width: 100%;
   height: 78%;
-  background-color: gray;
+background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRF9qi4WRoBLE0OhgMbzmCgBtJ-oQRTWchhUCn3R3UObvm0BcRsTA');
 
 
 }
@@ -212,7 +231,7 @@ table{
 #divcolores{
   width: 100%;
   height: 100%;
-  background-color: gray;
+background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRF9qi4WRoBLE0OhgMbzmCgBtJ-oQRTWchhUCn3R3UObvm0BcRsTA');
   color:white;
 }
 #divcolores table{
@@ -232,3 +251,20 @@ table{
 #dasboard{
     margin-left: 5%;
 }
+/*TEMAS*/
+
+.zoom{
+        /* Aumentamos la anchura y altura durante 2 segundos */
+        transition: width 2s, height 2s, transform 2s;
+        -moz-transition: width 2s, height 2s, -moz-transform 2s;
+        -webkit-transition: width 2s, height 5s, -webkit-transform 2s;
+        -o-transition: width 2s, height 2s,-o-transform 2s;
+    }
+    .zoom:hover{
+        /* tranformamos el elemento al pasar el mouse por encima al doble de
+           su tamaño con scale(2). */
+        transform : scale(2);
+        -moz-transform : scale(2);      /* Firefox */
+        -webkit-transform : scale(2);   /* Chrome - Safari */
+        -o-transform : scale(2);        /* Opera */
+    }

@@ -16,13 +16,14 @@
 
  $consulta_mysql2="INSERT INTO colorproducto (idrelacion,idcolor,codproducto)
  VALUES  ( NULL,'$nombrecolor','$nombreproducto')";
+ var_dump($consulta_mysql2);
 
 //si la consulta da verdadera es decir que se efectua bien
 
-         if($connection->query($consulta_mysql2)==true){
-           $ida=$_POST['producto'];
+    if($connection->query($consulta_mysql2)==true){
+        $ida=$_POST['producto'];
 
-     header("Location:detallecolor.php?deta=$ida");
+    header("Location:detallecolor.php?deta=$ida");
 
                mysql_close();
 
@@ -32,6 +33,6 @@
 
          }
 
-         unset($connection);
+         unset($connection);*/
 
 ?>

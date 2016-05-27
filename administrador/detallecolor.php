@@ -91,7 +91,7 @@
   tp.tallas=t.idtalla join producto p on p.codproducto=tp.codproducto where p.codproducto=$deta order by nombretalla";
 
    $result1=$connection->query($consulta1);
-   echo "<div class='cuerpo'>";
+   echo "<div class='cuerpo' style='width: 50%;'>";
    echo "<center><form name='myform' action='eliminar-talla.php'  method='POST'>";
    echo "<fieldset>";
    echo "<legend>ELIMINAR TALLAS</legend>";
@@ -115,7 +115,7 @@
        colores c on c.idcolor=cp.idcolor where p.codproducto=$deta order by nombre";
 
    $result3=$connection->query($consulta3);
-   echo "<div class='cuerpo'>";
+   echo "<div class='cuerpo' style='width: 50%;margin-top: 8%;'>";
   echo "<center><form name='myform1' action='eliminacolor.php'  method='POST'>";
    echo "<fieldset>";
    echo "<legend>ELIMINAR COLOR</legend>";
@@ -136,10 +136,7 @@
    echo "  </form><center>";
     echo "</div>";
   ?>
-</div>
-  </div>
-  <div class="col-mod-10 cold-offset-1">
-      <div class="nav nav-tabs well well-sm" style="text-aling:center;">
+
 
     <?php
     $consulta4="SELECT DISTINCT nombretalla ,tp.tallas FROM tallas  t join tallasproducto tp  on
@@ -147,7 +144,7 @@ tp.tallas=t.idtalla join producto p on p.codproducto=tp.codproducto ";
 
  $result4=$connection->query($consulta4);
 
- echo "<div class='cuerpo'>";
+echo "<div class='cuerpo' style='margin-top: -26.4%;float: right;width: 50%;'>";
  echo "<center><form name='myform' action='agrega-talla.php'  method='POST'>";
  echo "<fieldset>";
  echo "<legend>AGREGAR TALLAS</legend>";
@@ -171,7 +168,7 @@ $obj4=$result4->fetch_object();
      colores c on c.idcolor=cp.idcolor order by nombre";
 
  $result3=$connection->query($consulta3);
- echo "<div class='cuerpo'>";
+ echo "<div class='cuerpo' style='margin-top: -9.2%;float: right;width: 50%;'>";
 echo "<center><form name='myform1' action='agregacolor.php'  method='POST'>";
  echo "<fieldset>";
  echo "<legend>AGREGAR  COLOR</legend>";
