@@ -50,7 +50,7 @@
               <input type="text" name="db" class="form-control input-lg" placeholder="NOMBRE_BASE" style="margin-top: -14%; margin-left: 34%;">
             </div>
             <label style="margin-top: 58%;float: left;margin-left: -33%;">
-              <input type="checkbox" name="terms"> ACEPTA <a href="#">Terminos y Condiciones</a>.</label><br>
+              <input type="checkbox" name="terms" required> ACEPTA <a href="#">Terminos y Condiciones</a>.</label><br>
             <input type="submit" value="Sign up" class="btn btn-primary pull-left" style="margin-top: 64%;margin-left: -23%;">
 
     			</div>

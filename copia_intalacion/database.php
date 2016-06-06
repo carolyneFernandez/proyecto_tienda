@@ -99,10 +99,10 @@ $connection->query("CREATE TABLE IF NOT EXISTS `colores` (
       ADD CONSTRAINT `fk_tallasproducto_2` FOREIGN KEY (`tallas`) REFERENCES `tallas` (`idtalla`) ON DELETE CASCADE ON UPDATE CASCADE;");
 $connection->query("INSERT INTO `usuarios` (`codusuario`, `Nombre`, `apellido`, `dni`, `localidad`, `provincia`, `pais`, `administrador`, `direccion`, `passwd`, `telefono`, `estilo`) VALUES
     (0, 'carolyne', 'fernandez', '20503311F', 'sevilla', 'Sevilla', 'Espana', 0, 'carretera sevilla-lora 14', '2602fb88a05e5e75ad1f2c35475d2c76', 993240034, 0),
+  (1, 'juandiego', 'Perez', '14508311J', 'sevilla', 'Sevilla', 'Espana', 0, 'carretera sevilla-lora 14', '9bdaf116541ebb6cc57839e7d4292ed5', 993240034, 0),
     (2, 'noelia', 'carrasco', '20503313D', 'sevilla', 'sevilla', 'Espana', 1, 'calle paruro 17', '17d7cd52cd18e7bab99bb71de1669d95', 684065028, 2),
     (4, 'rosario', 'lopez', '20658742K', 'lima', 'Lima', 'Peru', 1, 'jr. ancash 1634', '865cc410a1b7c60ae8a38c8761b2b342', 987423541, 0),
-    (5, 'jose', 'De las Heras', '20503311Z', 'gerena', 'Sevilla', 'Espana', 1, 'carretera sevilla-lora 15 ', '662eaa47199461d01a623884080934ab', 98742354, 1),
-    (7, 'fe', '', '', 'r', 'd', 'd', 1, 'd', 'a684eceee76fc522773286a895bc8436', 0, 0);");
+    (5, 'jose', 'De las Heras', '20503311Z', 'gerena', 'Sevilla', 'Espana', 1, 'carretera sevilla-lora 15 ', '662eaa47199461d01a623884080934ab', 98742354, 1);");
 $connection->query("INSERT INTO `pedidos` (`codpedido`, `codusuario`, `fechaemision`) VALUES
 
 (1, 4, '2016-04-08'),
